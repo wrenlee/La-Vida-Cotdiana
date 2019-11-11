@@ -1,0 +1,73 @@
+New York
+Los Angeles
+Columbus
+Charlotte
+Dallas
+Denver
+Seattle
+Washington
+Boston
+Chicago
+Houston
+Phoenix
+San Diego
+San Francisco
+San Jose
+Austin
+Fresno
+Las Vegas
+Baltimore
+Tucson
+Miami
+Jacksonville
+Omaha
+Oakland
+Arlington
+Wichita
+Cleveland
+Honolulu
+Santa Ana
+Riverside
+Corpus Christi
+Lexington
+Plano
+Orlando
+Newark
+Madison
+Chandler
+Buffalo
+Scottsdale
+Reno
+Norfolk
+Boise
+Richmond
+Baton Rouge
+Des Moines
+Spokane
+Montgomery
+Akron
+Little Rock
+Port St. Lucie
+Tallahassee
+Providence
+Ontario
+Sioux Falls
+Elk Grove
+Peoria
+Eugene
+Macon
+Kansas City
+Pomona
+Bellevue
+Orange
+Denton
+Charleston
+Warren
+Elizabeth
+Round Rock
+Lafayette
+Topeka
+Fargo
+Springfield
+Westminster
+Manchester
