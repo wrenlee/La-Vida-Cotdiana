@@ -13,8 +13,8 @@ public class TextTokenizer {
 		fSearchText = aSearchText;
 	}
 
-	public Set<String> parseSearchText() {
-		Set<String> result = new LinkedHashSet<>();
+	public ArrayList<String> parseSearchText() {
+		ArrayList<String> result = new ArrayList<>();
 
 		boolean returnTokens = true;
 		String currentDelims = fWHITESPACE_AND_QUOTES_PUNCTUATION;
@@ -32,7 +32,7 @@ public class TextTokenizer {
 
 	// PRIVATE
 	private String fSearchText;
-	private static final Set<String> fCOMMON_WORDS = new LinkedHashSet<>();
+	private static final ArrayList<String> fCOMMON_WORDS = new ArrayList<>();
 
 	private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = " \t\r\n\",.!?;:()/\\—";
 	// private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = "
@@ -72,7 +72,7 @@ public class TextTokenizer {
 		return (aText != null) && (!aText.trim().equals(""));
 	}
 
-	private void addNonTrivialWordToResult(String aToken, Set<String> aResult) {
+	private void addNonTrivialWordToResult(String aToken, ArrayList<String> aResult) {
 		aResult.add(aToken.trim());
 	}
 

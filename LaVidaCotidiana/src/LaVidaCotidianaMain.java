@@ -24,33 +24,42 @@ public class LaVidaCotidianaMain extends PApplet {
 	// color variables
 	int pastelPink = color(255, 207, 240);
 	int pastelGreen = color(207, 255, 213);
+	int pastelRed = color(255, 183, 178);
+	int pastelOrange = color(255, 218, 193);
+	int pastelYellow = color(226, 240, 203);
+	int pastelPurple = color(219, 196, 223);
+	int pastelBlue = color(199, 206, 234);
 
-	// text tokennsizer
-	ArrayList<ArrayList<String>> loadedText; //arraylist of tokens
+	// text tokenizer
+	ArrayList<ArrayList<String>> loadedText; // arraylist of tokens
+	ArrayList<String> filePath;
 	private ArrayList<String> tokens;
+	
 	private static final String fPUNCTUATION = "\",.!?;:()/\\";
 	private static final String fENDPUNCTUATION = ".!?;,";
 	private static final String fREALENDPUNCTUATION = ".!?";
 	private static final String fWHITESPACE = "\t\r\n ";
 
-	int order; //order n value
-	
+	int order; // order n value
+
 	// music player
 	boolean isPlay;
 	MelodyPlayer player;
 	MidiFileToNotes midiNotes;
 	MarkovGeneratorN rhythm;
 	MarkovGeneratorN pitch;
+	
+	ArrayList<String> possibleFirstString;
 
-	//generators
+	// generators
 	ProbabilityGenerator probGen;
 	MarkovGeneratorN eventText;
 	MarkovGeneratorN eventSubject;
 
-	//buttons
-	Button startButton;
+	// screens
+	Screen[] screenArr;
 
-	//scanner
+	// scanner
 	Scanner scanner;
 	String name;
 
@@ -64,24 +73,34 @@ public class LaVidaCotidianaMain extends PApplet {
 	}
 
 	public void setup() {
-		order = 3;
-		
+		// screen initialization
+		screenArr = new Screen[4];
+		screenArr[0] = new StartScreen(this, 's', pastelPink);
+		screenArr[1] = new DesktopScreen(this, 'd', pastelGreen);
+
+		order = 2;
+
 		loadedText = new ArrayList<ArrayList<String>>();
 		probGen = new ProbabilityGenerator();
+		possibleFirstString = new ArrayList<String>();
 		eventText = new MarkovGeneratorN();
 		eventSubject = new MarkovGeneratorN();
 		
-		loadNovel("data/dedman_emails_body.txt", 0);
-		loadNovel("data/dedman_emails_subject.txt", 1);
-		
-		fill(120, 50, 240);
-		background(100);
-
 		// scanner
 //		scanner = new Scanner(System.in);
 //		name = scanner.nextLine();
 
-//		String filePath = getPath("mid/name.mid"); // test file
+		//songs
+		filePath = new ArrayList<String>();
+//		filePath.add(getPath("mid/Coldplay - Viva La Vida.mid"));//coldplay
+//		filePath.add(getPath("mid/John Denver - Take Me Home Country Roads.mid"));//country roads
+//		filePath.add(getPath("mid/Queen - Bohemian Rhapsody,mid"));//queen
+//		filePath.add(getPath("mid/Tokyo Ghoul - Unravel.mid"));//tokyo ghoul
+		//midinotes array
+		//one player
+		//pitch array
+		//rhythm array
+		
 //		midiNotes = new MidiFileToNotes(filePath);
 //		midiNotes.setWhichLine(0);
 //		player = new MelodyPlayer(this, 100.0f);
@@ -94,78 +113,72 @@ public class LaVidaCotidianaMain extends PApplet {
 //		player.setup();
 //		player.setMelody(pitch.generateMultiple(20));
 //		player.setRhythm(rhythm.generateMultiple(20));
-
-		// buttons
-		startButton = new Button(this, width / 2 - 50, height / 2 + 100, 100, 50);
-
-		//train
-		probGen.train(loadedText.get(0));
-		eventText.train(loadedText.get(0), order);
-		eventSubject.train(loadedText.get(1), order);
 		
-		// generate initial string
-		ArrayList<String> initString = new ArrayList<String>();
-		String initGen = (String) probGen.generate(); //generate first token
-		//System.out.println(gen);
-		initString.add(initGen);
-		System.out.println(initString);
-		int i = 1;
-		while(i < order) {
-		//for (int i = 1; i < order; i++) {
-			String gen = (String) eventText.generate(initString);
-			initString.add(gen);
-			int index = eventText.getSeqArr().indexOf(initString); //if it's not a sequence, reroll
-			if(index == -1) {
-				gen = (String) eventText.generate(initString);
-				System.out.println(i + ": Reroll " + gen);
-				initString.set(i, gen);
-			}
-			i++;
-		} // generate initial string
-		System.out.println("Init string " + initString);
+		tokenizer();
+		train();
+		firstString();
+		generate();
 	}
 
 	public void draw() {
-		startButton.display("Start");
-		//eventText.train(tokens, order);
 //		if(isPlay) {
 //			player.play();
 //		}
-
-	}
-
-	public void start() {
-
-//		fill(pastelPink); // pastel pink
-//		rect(0, 0, 1300, 800);
-		//fill(255); // text fill
-		// text("Type in your name then press the button to start", width / 2, height /
-		// 2);
-
-//		if (name.isEmpty() == false) {
-//			desktop();
+		screenArr[0].display();
+//		if(screenArr[0].getName() == 'd'){
+//			screenArr[1].display(); //desktop
 //		}
-//		startButton.display("Start");
-//		
-//		if(startButton.isClicked) {
-//			desktop();
-//		}//is clicked
+		//generate();
 	}
 
-	public void desktop() {
-//		fill(200);
-//		rect(0, 0, 1300, 50); // stripe at top
-
-		fill(255);
-		text("Welcome to La Vida Cotidiana, " + name + "!", 100, 10);
+	public void tokenizer() {
+		loadNovel("data/dedman_emails_body.txt", 0);
+		loadNovel("data/dedman_emails_subject.txt", 1);
+	}
+	
+	public void firstString() {
+		possibleFirstString.add("The");
+		possibleFirstString.add("Join");
+		possibleFirstString.add("Come");
+//		possibleFirstString.add("This");
+//		possibleFirstString.add("You");
+//		possibleFirstString.add("At");
+//		possibleFirstString.add("Free");
+//		possibleFirstString.add("Learn");
 	}
 
-	public void music() {
-
+	public void train() {
+		probGen.train(loadedText.get(0));
+		eventText.train(loadedText.get(0), order);
+		eventSubject.train(loadedText.get(1), order);
 	}
 
-	public void email() {
-
+	public void generate() {
+		// generate initial string
+		ArrayList<String> initString = new ArrayList<String>();
+		int rand = (int) random(possibleFirstString.size());
+		initString.add(possibleFirstString.get(rand));
+		int i = 1;
+		while (i < order) {
+			//int index = eventText.getSeqArr().indexOf(initString); // if it's not a sequence, reroll
+			//if (index == -1) {
+				ArrayList<String> lastToken = new ArrayList<String>(); //last token
+				lastToken.add(initString.get(i - 1));
+				String gen = (String) eventText.generate(lastToken);
+				//ArrayList<String> gen = new ArrayList<String>();
+				//String gen = eventText.generateMultiple(lastToken, order);
+				//System.out.println(gen);
+				initString.add(gen);
+			//}
+//			else {
+//				String gen = (String) eventText.generate(initString);
+//				initString.add(gen);
+			//}
+			i++;
+		} // generate initial string
+		System.out.print(initString);
+		int numGen = (int) random(300);
+		System.out.println(eventText.generateMultiple(initString, numGen));
 	}
 
 	void loadNovel(String p, int num) {
@@ -179,7 +192,7 @@ public class LaVidaCotidianaMain extends PApplet {
 			for (int i = 0; i < lines.size(); i++) {
 
 				TextTokenizer tokenizer = new TextTokenizer(lines.get(i));
-				Set<String> t = tokenizer.parseSearchText();
+				ArrayList<String> t = tokenizer.parseSearchText();
 				tokens.addAll(t);
 			}
 
@@ -187,7 +200,7 @@ public class LaVidaCotidianaMain extends PApplet {
 			e.printStackTrace();
 			println("Oopsie! We had a problem reading a file!");
 		}
-		//loadedText.set(num, tokens); //adds tokens to the slot at num
+		// loadedText.set(num, tokens); //adds tokens to the slot at num
 		loadedText.add(tokens);
 	}
 

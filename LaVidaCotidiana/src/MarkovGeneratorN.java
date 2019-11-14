@@ -141,32 +141,18 @@ public class MarkovGeneratorN<T> extends ProbabilityGenerator {
 
 	// markov generator generate() comes from the prob gen's generate()
 	public T generate(ArrayList initToken) { // generate one note first from the prob gen generate
-		// System.out.println("Init token " + initToken);
 		assert (markovProbabilityArr.size() > 1); // this object hasn't been trained
 
 		T generated = null;
 		int seqIndex = uniqueAlphabetSequence.indexOf(initToken);
-		// System.out.println("Init token " + initToken);
-		// System.out.println("seq index " + seqIndex);
 		if (seqIndex == -1) {
-			// calls markov 1 generator
 			T firstToken = (T) initToken.get(0);
-			//System.out.println("first token " + firstToken);
 			generated = markovGen.generate(firstToken);
-			System.out.println("not found");
 		} // if not found
 		else {
-			// System.out.println("seq index " + seqIndex);
-			// calls probability generator
 			ArrayList<Integer> row = (transTable.get(seqIndex));
-			// System.out.println(row);
 			probabilities(row);
-			//System.out.println(row);
 			generated = (T) super.generate(probabilityArr);
-			System.out.println("Found");
-//				System.out.println("FOUND: " + seqIndex);
-//				System.out.println("generated: " + generated);
-//				System.out.println("row: " + row);
 		} // if found
 
 		if (seqIndex == indexWithNoChance) {
@@ -178,20 +164,9 @@ public class MarkovGeneratorN<T> extends ProbabilityGenerator {
 	public ArrayList<T> generateMultiple(ArrayList initToken, int n) { // generate multiple notes
 		ArrayList<T> genArr = new ArrayList();
 		for (int i = 0; i < n; i++) {
-			//System.out.println("Init token " + initToken);
+			//System.out.println("Gen multi init " + initToken);
 			T token = generate(initToken); // generate new token
-			//System.out.println("Generated token " + token);
-			initToken.remove(0); // remove first token
-			initToken.add(token); // add new token to initial sequence
-			genArr.add(token); // add new token to generated array
-		}
-		return genArr;
-	}// generate multiple function
-
-	public ArrayList<T> generateMultipleAndPrint(ArrayList initToken, int n) { // generate multiple notes
-		ArrayList<T> genArr = new ArrayList();
-		for (int i = 0; i < n; i++) {
-			T token = generate(initToken); // generate new token
+			//System.out.println("token " + token);
 			initToken.remove(0); // remove first token
 			initToken.add(token); // add new token to initial sequence
 			genArr.add(token); // add new token to generated array
