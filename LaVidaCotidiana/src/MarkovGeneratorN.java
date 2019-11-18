@@ -32,6 +32,7 @@ public class MarkovGeneratorN<T> extends ProbabilityGenerator {
 	public void train(ArrayList inArr, int orderN) {
 		generator.train(inArr);
 		markovGen.train(inArr);
+		//markovGen.unitTest1();
 
 		// variables
 		int tokenIndex = 0; // index within the alphabet array, token index
@@ -146,7 +147,8 @@ public class MarkovGeneratorN<T> extends ProbabilityGenerator {
 		T generated = null;
 		int seqIndex = uniqueAlphabetSequence.indexOf(initToken);
 		if (seqIndex == -1) {
-			T firstToken = (T) initToken.get(0);
+			T firstToken = (T) initToken.get(initToken.size() - 1);
+			//T firstToken = (T) initToken.get(0);
 			generated = markovGen.generate(firstToken);
 		} // if not found
 		else {
@@ -158,6 +160,22 @@ public class MarkovGeneratorN<T> extends ProbabilityGenerator {
 		if (seqIndex == indexWithNoChance) {
 			markovGen.generate();
 		} // if the row number has -1 probability
+		
+		//reroll
+//		ArrayList<T> reRoll = new ArrayList<T>();
+//		for(int i = 0; i < initToken.size(); i++) {
+//			reRoll.add((T) initToken.get(i));
+//		}
+//		reRoll.add(generated);
+//		int genArrIndex = uniqueAlphabetSequence.indexOf(reRoll);
+//		//System.out.println(genArrIndex);
+//		if(genArrIndex == -1) {
+//			System.out.println("REROLL");
+////			T newToke = (T) initToken.get(initToken.size() - 1);
+//			generated = markovGen.generate((T) initToken.get(0));
+//			//System.out.println(generated);
+//		}
+		
 		return generated;
 	}// generate functions
 

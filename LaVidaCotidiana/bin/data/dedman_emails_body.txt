@@ -1,6 +1,6 @@
 Join Dr. Steve Sekula and the Department of Physics to view “transit of Mercury,” when Mercury will pass between Earth and the Sun. There will be a telescope with a solar filter set up for observation in the plaza behind Dedman Life Sciences Building. Stop by to experience this special event – the next “transit” won’t occur until 2032. For more information, please contact Dr. Sekula at ssekula@smu.edu. 
 
-Have a collection of digitized books, music lyrics, letters, or articles and want to visualize a map of all locations mentioned in the texts? Using the Google Colaboratory Python environment, learn how to write and leverage Python code to: (1) automatically extract named locations from texts, (2) obtain coordinates for these locations by geocoding against Bing Maps API, and (3) visualize these locations by overlaying on an interactive map. Join the Dedman College Interdisciplinary Institute and SMU Libraries in welcoming Joshua Been, digital scholarship librarian from Baylor University, for a presentation on text data mining, data visualization, and more! For more information and to register, please visit: smu.edu/libraryworkshops.
+Have a collection of digitized books, music lyrics, letters, or articles and want to visualize a map of all locations mentioned in the texts? Using the Google Collaboratory Python environment, learn how to write and leverage Python code to: (1) automatically extract named locations from texts, (2) obtain coordinates for these locations by geocoding against Bing Maps API, and (3) visualize these locations by overlaying on an interactive map. Join the Dedman College Interdisciplinary Institute and SMU Libraries in welcoming Joshua Been, digital scholarship librarian from Baylor University, for a presentation on text data mining, data visualization, and more! For more information and to register, please visit: smu.edu/libraryworkshops.
 
 Walter E. Seward’s recently recovered Negroes Call to the Colors and Soldiers Camp-life Poems (1919) depicts black soldiers’ experiences during WWI. This talk carves out a place for Seward’s work within the African American literary tradition and examines how his multidimensional use of photography and poetry posits black identity and life into the national consciousness. For more information, please visit: https://www.smu.edu/Dedman/Academics/Departments/English/LecturesAndEvents.
 
@@ -37,3 +37,364 @@ Do you know a high school student in the DFW area interested in studying Human R
 The Asian Studies Lecture Series is pleased to present Dr. David H. Slater, professor at Sophia University, Tokyo and Dr. Robin O’Day, assistant professor at University of North Georgia. Their talk, “Seeking Asylum in Japan: An oral narrative approach to asylum seekers’ experiences in Tokyo,” addresses the number of refugees applying for asylum in Japan. Between 2010 and 2017, the country has seen a 1600% increase met with strikingly low acceptance, causing asylum seekers to often wait in a state of legal limbo, struggling to rebuild their lives. This talk explores these issues based on extended interviews with asylum seekers in Tokyo as part of a refugee support group at Sophia University. For more information, please contact Tiffany Powell at tapowell@smu.edu. 
 
 In this lecture co-sponsored with SMU Teaching and Learning, Dr. Elizabeth Wheaton will explore how economic factors and individual choices create an environment that can kindle child abuse, an impact that continues for the abused over a lifetime. She will discuss how using the economics lens helps us to discern the decisions being made that lead to child abuse, and, having gained an understanding of the choice structure of child abuse, we can discover ways to change incentives in order to decrease the prevalence, severity, and impact of child abuse. Space is limited and tickets are $15. For more information and to purchase tickets, please visit: https://www.smu.edu/simmons/Academics/DisputeResolution.
+
+Enjoy a night away in the enchanting Arboretum gardens. Come bedecked in your bows and bowties (and don't forget your dancing shoes)! Buses depart from Boaz Commons at 8:30pm. Please RSVP via Eventbrite so we can plan accordingly!
+
+Rainbow Vomit returns with more art, more clouds, and a sneak peak of the next chapter! From superheroes to unicorns, come experience the beauty of the rainbow as it bursts from the seams of a comic-strip come to life at Dallas #1 rated immersive art exhibit! 
+
+This exhibit runs through January 5th, you can find all dates and tour times using the above ticket link.
+
+Located across the street from the historic Fair Park right off the DART, this 2600-square foot space has been customized for an extraordinary experience from the outside in. Beginning with an exterior characteristic of an uncolored comic book, guests begin the journey to immerse themselves in art, light, and sound reminiscent of a journey into the fantasy of flight. With more than 25 unique photo opportunities throughout the exhibit, the installations includes over 6000 LEDs, 100 pounds of cotton, 20 pounds of glitter, 5 miles of ribbon and 1 secret unicorn! 
+Take a walk down the "Streets of Saigon" with us at VSA's annual Pho Night! 
+
+Enjoy a warm bowl of pho, taste traditional Vietnamese street foods, be entertained by amazing singers, see a fashion show of Vietnam's traditional ao dai dresses, and more! 
+There will also be opportunities to win prizes!
+
+FREE for all SMU students, faculty and staff
+
+$15 for all external guests (ticket includes pho dinner and all street foods)
+BUY TICKETS HERE*:
+https://www.eventbrite.com/e/17th-annual-pho-night-streets-of-saigon-tickets-77405354499
+
+*All proceeds from ticket sales will be donated to Thrive Networks / East Meets West Foundation, a global NGO that improves sanitary conditions and water quality in rural Vietnam. 
+LEARN MORE HERE:
+https://thrivenetworks.org/
+
+#SaturdaysAreForSaigon
+
+Rainbow Vomit is open Wednesday through Sunday every week. Book your adventure today!
+Join fellow students at a Nightmare Before Christmas themed party put on by the SMU Service House. There will be FREE Cane's, pizza, boba, live music, and fun! Come dressed up in your favorite Halloween or Christmas outfits!
+This is an annual homecoming event for Peacemakers and Justice Seekers in our North Texas Community. It is a time to come together and lift up the good work being done for Peace and Justice by exceptional leaders!
+ 
+The SILENT AUCTION will be back...and you will have an opportunity to ADVERTISE IN OUR PROGRAM...and PRESENT YOUR GOODS & SERVICES at our RECEPTION!  
+
+Find out how to be a part of all that, register and/or get banquet tickets here:  https://www.dpjc.org/2019-peacemaker-awards-banquet.
+The Boho Market pop-up at Dallas Farmers Market is a unique event where you can shop our best local makers and small businesses alongside the farmers and vendors at Dallas Farmers Market! We'll see you soon!
+The Dallas Filmmakers Alliance, a 501(c) (3) Non-Profit organization is pleased to announce our 4th annual DFA Film Premiere and Fundraiser. Get excited as we screen productions that were carefully selected from a pool of submissions. All films showcased were filmed in Dallas or were created by Dallas filmmakers. 
+
+It is also an event full of celebration, drinks, networking, and a showcase of love for local art. 
+
+See full details about our premiere here: https://filmindallas.org/annual-premiere 
+
+The DFA annual premiere is also a fundraising event to support the DFA’s service to its filmmaking community. 
+
+Films, not in screening order:
+
+The Surprise 
+Sweetie 
+The Granny Shack 
+Mrs. Bradford's House 
+Adnan Far From Home 
+Red Dots 
+The Sacrifice 
+Daddy's Little Girl 
+
+What does the cost of the ticket get you and how does it help the DFA? 
+Early Bird  (Sale Ended 11/27) Costs for rental of the Angelika Theatre, red carpet, and all other costs to host the event. 
+Additional proceeds go to the DFA to support the classes, guest speakers, public events, and help grow the resources we can offer to the local filmmakers and help support the DFA mission. 
+
+$25 General Admission 
+Costs for rental of the Angelika Theatre, red carpet, and all other costs to host the event .
+Additional proceeds go to the DFA to support the classes, guest speakers, public events, help grow the resources we can offer to the local filmmakers and help support the DFA mission. 
+Custom DFA wristband 
+
+$30 VIP ticket 
+Costs for rental of the Angelika Theatre, red carpet, and all other costs to host the event 
+Additional proceeds go to the DFA to support the classes, guest speakers, public events, help grow the resources we can offer to the local filmmakers and help support the DFA mission. 
+Custom DFA wristband and DFA T-Shirt (Valued at $20)
+
+The mission of the DFA is to lead a united front for the development of film and expansion of opportunities for filmmakers In the Dallas community. 
+
+Film is not something we do, film is a lifestyle. We believe that every great film begins with a great story and collaboration is the precursor to success. Dallas Filmmakers Alliance is a creative community organization of producers, filmmakers, and artists. The DFA aims to accomplish its mission by facilitating collaboration between filmmakers, educating through workshops, classes, and competitions, offering public support to important causes in our community, and organizing productions with grants. 
+
+We strive to make Dallas synonymous with film through feature-quality motion pictures, talented visionaries, and the development of stories worth telling. The DFA’s vision in a few words, we want Film in Dallas.
+LCC's 1st Annual Tamal Festival
+Saturday, December 7, 2019, 12-3pm
+ 
+The Latino Cultural Center will be hosting its 1st Annual Tamal Festival on Saturday, December 7, 12-3pm. The Tamal Festival seeks to highlight the history and cultural importance of tamales in Latino culture. FREE and open to the public.
+
+We are currently looking for corn/maiz and tamale based art and vendors to highlight during the festival. If you are interested in applying for a vendor table, please contact Jessica Trevizo at jessica.trevizo@dallascityhall.com for more information. 
+
+Application deadline is Friday, November 22, 2019. There are no vendor table fees, but space is limited and vendors will be notified of selection by Saturday, November 23, 2019.
+Grand Opening Night is going to be a Winter Blast!
+The most spectacular event for the whole family! This one of a kind unique experience is located in the center of Frisco right next to FC Dallas sporting 3 acres of a spectacular Winter Wonderland. 
+From Nov 29 - Dec 22!
+For 21 days, you will find a wonderful North Pole transformed by a Magical Snow Dragon, as the snow flies through the air and lands on your skin you will be transported to join us in a world ruled by imagination. 
+
+You can get lost in a Light Maze, fall into our Snow Pits, speed down our snow slide, listen to live performances, wander through Fairyland, sing Karaoke  & enjoy a Holiday drink or two in our 21+ Angry Elf Bar, explore our sweet Candy Land, enjoy nightly movies in our 25 foot outdoor theater & indulge in all of our scrumptious treats and foods all in one night... 
+This is Winter Wonderland and we are awaiting YOU!!
+The Korean Society of Dallas and the Korean American Development Foundation will host the 2019 Annual Korean Festival of Dallas at the Carrollton Asian Town Plaza, on Saturday, November 16, 2019, which will highlight Korean culture, including art, food and entertainment (both cultural and K-Pop performances).  Please join us for the premier Korean Festival in North America with well over 100,000 attendees each year. 
+Free Admission.
+
+2019 Annual Korean Festival of Dallas
+Saturday, November 16 2019, 10:30AM - 9:30PM
+Carrollton Asian Town Plaza
+2625 Old Denton Road, Carrollton, Texas 75007
+From the U.S./Mexico border to Palestine/Israel child detentions are egregious violations of human rights experienced by thousands of children each day. 
+
+Join The Palestine Action Committee of Texas (PACT), along with the Dallas Peace and Justice Center, The Red Handed Warrior Society, American Muslims for Palestine -Dallas (AMP-Dallas), Human Rights Initiative, RAÍCES, Palestinian Youth Movement and North Texas Dream Team to learn about the interconnectedness of these injustices and how we can advocate for policies that uphold and protect the rights of all children worldwide. 
+Join us for the African American Women’s Symposium: #Say Her Name-Black Women’s Struggle with Police Violence.
+CATS, the record-breaking musical spectacular by Andrew Lloyd Webber that has captivated audiences in over 30 countries and 15 languages, is now on tour across North America! Audiences and critics alike are rediscovering this beloved musical with breathtaking music, including one of the most treasured songs in musical theater - "Memory". Winner of 7 Tony Awards® including BEST MUSICAL, CATS tells the story of one magical night when an extraordinary tribe of cats gathers for its annual ball to rejoice and decide which cat will be reborn.
+Don’t be a mouth breather! Open up a tear in time and space to visit the DMA's version of the Vale of Shadows. Enjoy tours of alternate realities in the collection, Dungeons & Dragons character drawing, and a hunt for monsters in the galleries.
+ 
+SCHEDULE:
+
+BEST OF DRAGON
+All night, Pick up a scavenger hunt in the Concourse
+Do you have true sight? Find out as you hunt for monsters in our galleries that have connections to the forces of evil that plague Hawkins, Indiana.
+ Survive the hunt and emerge with all the correct answers to win a drink or dessert at the DMA Cafe.
+ 
+AV FRIENDS WELCOME
+5:00–7:30 p.m., Atrium
+Rock out to the Clash, New Order, Peter Gabriel, and other 80s classics with DJ Yeahdef as you embrace Generation X and play the best games from the decade.
+ 
+WILL THE WISE
+5:00–8:30 p.m., Art Studio, Center for Creative Connections (C3)
+Are you the Dungeon Master, a Wizard, a Knight, or a Dwarf? Create a Dungeons & Dragons character to take home for a future campaign with your party.
+ Supplies are limited to 250 people. Pick up tickets beginning at 5:00 p.m. at the table in front of C3.
+ 
+THE ACROBAT AND THE FLEA
+6:00, 7:00 & 8:00 p.m., Meet at the main Visitor Services Desk
+Shadow walk on this tour of alternate realities in our collection with Manager of Adult Programs Jessie Carrillo.
+Each tour is limited to 25 people. Pick up tickets for each tour at the main Visitor Services Desk beginning at 5:45, 6:45, and 7:45 p.m.
+
+SHE’S OUR FRIEND AND SHE’S CRAZY
+7:30 p.m., Atrium
+Eleven isn’t the only one with preternatural powers. Sit back and be amazed as a mentalist wows you with his psychic abilities. But be careful . . . you never know when an interdimensional gateway might open.
+
+DMA Cafe Featured Menu
+Chicken and Waffle Sliders with Chipotle Maple Butter | $6.50
+Bacon-Wrapped Mystery Meatloaf with Mashed Potatoes and Green Beans | $12
+Pineapple Upside-Down Cake | $4
+
+Tickets $5 public (some exhibitions require additional tickets on this evening) 
+FREE for DMA Members
+FREE for educators (with valid ID)
+Celebrate the power of creativity and all the ways we MAKE in this fun-filled day of FREE activities for the entire family.
+Ver el calendario completo en español: DMA.org/FestivalFamiliar
+
+EVENT SCHEDULE:
+
+Yoga for Kids!
+11:00 a.m.–noon, Ross Avenue Plaza
+Join our yogini, Nicole Payseur, for meditation, relaxation, and some very pretzel-like poses.
+
+Chiptunes 4 Autism Sensory Table
+11:00 a.m.–12:30 p.m., Center for Creative Connections (C3) Gallery
+Play a tune on a Nintendo, tickle the keys of an electronic keyboard, and meet the creative brains behind Chiptunes 4 Autism.
+
+Meet and Make with an Artist: Foil Embossing Frenzy with Molina High School National Art Honor Society
+11:00 a.m.–1:30 p.m., Tech Lab, C3
+Meet students from Molina High School's National Art Honor Society and create foil embossed artwork. Learn about the technique of repoussé, a metalworking technique in which a malleable metal is ornamented or shaped by hammering from the reverse side to create a design. Use a similar technique with alternative materials to get the same beautiful outcome!
+
+Yes We CAN!: Canned Food Construction with the DMA Teen Advisory Council
+11:00 a.m.–3:00 p.m., Atrium
+Dallas has a big heart, so let's do something big to give back to our community! Bring donations of canned food to the Family Festival to benefit North Texas Food Bank. The DMA Teen Advisory Council will be on-site to create a larger-than-life can sculpture from donations, so stop by to lend them a hand.
+
+Open Studio: Watercolor Tablescapes
+11:00 a.m.–4:00 p.m., Art Studio, C3
+Drop by the studio to arrange your own still-life composition and then create a watercolor masterpiece.
+
+Sensory Room
+11:00 a.m.–4:00 p.m., Founders Room
+Need a place to take a break? Drop in anytime throughout the festival to relax and explore quiet activities. All ages are welcome!
+
+#DPLWhatsNext: Dallas Public Library Reading Recommendations
+11:00 a.m.–4:00 p.m., Concourse
+Calling all bookworms! Meet one of DPL's friendly librarians, get personalized book recommendations at our Peanuts-inspired booth, and browse favorite children's books. Discover new things; find out what's next – #DPLWhatsNext.
+
+Meet and Make with an Artist: Creating a World with Betty Rodriguez
+11:00 a.m.–4:00 p.m., Main Entrance
+Would you change anything about our world today? With cardboard boxes and tissue paper, we'll work together to create a miniature world using our imagination and our senses. Work alongside local artist Betty Rodriguez at the Lunita Art Cart and watch our cardboard world grow throughout the day!
+
+Chiptunes 4 Autism: Music Showcase
+11:30 a.m.–12:30 p.m., C3 Theater
+Join Chiptunes 4 Autism as they play electronic music inspired by video games. Then, try out a variety of electronic instruments in hands-on stations.
+
+Kid Tour Guides: Amazing Americas
+11:30 a.m.–12:30 p.m., Level 4
+Learn fun facts and behind-the-scenes stories about art and artists from across the Americas at five different pop-up tour stops featuring junior tour guides from Arcadia Park Elementary.
+
+Alma y Corazón Tejano Ballet Folklórico
+Noon–12:30 p.m., Horchow Auditorium
+Embark on a dancing journey and enjoy the brilliant costumes and choreography of this talented cultural performing group dedicated to celebrating the traditional dance and customs of Hispanic regions.
+
+Dress Like the Art Photo Booth
+Noon–1:30 p.m., Level 2 Landing
+Strike a pose and turn yourself into a work of art with props and costumes. Let the artworks around you be your inspiration!
+
+Meet and Make with an Artist: Build a Sculpture with Sweet Pass Sculpture Park
+Noon–1:30 p.m., Sculpture Garden
+The art is SHRINKING! Or is it? Explore all the BIG artworks in the DMA Sculpture Garden, and then work with Tamara and Trey from Sweet Pass Sculpture Park to create your own tiny sculpture to add to our DIY miniature sculpture garden.
+
+Peformance in the Atrium featuring Molina High School Modern Band
+12:30 p.m., Atrium
+Join us for a special musical performance by talented local teens from Molina High School.
+
+Meet and Make with an Artist: Ash Studios's Empowering Words Workshop
+12:30–2:00 p.m., Fleischner Courtyard
+Drop by and discover the power/poder in words with collaborators from Ash Studios, Juan Cruz and Christian Rodriguez. Use drawing or collage materials to make your mark on banners featuring English/Spanish empowering words.
+
+Semillitas Story Time with Ofelia Faz-Garza
+1:00–1:30 p.m., C3 Theater
+Cozy up with a good book at a pop-up reading nook created by the Semillitas Book Club and enjoy story time with local artist Ofelia Faz-Garza. Then use paper, stickers, and tape to make your own handmade book to take home!
+
+Smell the Art! Stations
+1:00–2:00 p.m., Level 4 Landing
+Stop by our hands-on station and put your nose to the test. Try to identify different scents, imagine what a landscape painting might smell like if it came to life, and create a sketch inspired by one of our mystery smells.
+
+Family Tour: Makers on the Move
+1:30 p.m., Meet at the main Visitor Services Desk
+Go on a whirlwind adventure through the Museum galleries and explore the many ways artists around the world MAKE and CREATE on this interactive tour of the DMA's collection led by education staff. Tour is limited to the first 30 attendees.
+
+Meet and Make with an Artist: Become the Hero (or Villain) of Your Own Cardboard Kingdom with Chad Sell
+1:30–3:30 p.m., Tech Lab, C3
+Create your own incredible cardboard costume to transform yourself into the hero or villain of your dreams! Meet graphic novelist Chad Sell, learn about his new book "Cardboard Kingdom," and transform cardboard into wearable art.
+
+Meet and Make with an Artist: Building with Bright Start Project
+2:00–3:00 p.m., Level 3 Landing
+Stack, build, think! Get inspired by the art around you and participate in an engineering challenge for all ages. Join David Reyes from Bright Start Project and use LEGO blocks to build away.
+
+Family Tour en español: Makers on the Move
+2:30 p.m., Meet at the main Visitor Services Desk
+Go on a whirlwind adventure through the Museum galleries and explore the many ways artists around the world MAKE and CREATE on this interactive tour of the DMA's collection led by education staff. Tour is limited to the first 30 attendees. This tour will be offered in Spanish.
+
+Improv for Families with Stomping Ground Comedy
+2:30–3:30 p.m., C3 Theater
+Learn about the basics of improv comedy together through interactive games of listening, supporting, and saying YES to create hilariously silly moments. Be playful with your family and connect in a new creative way!
+The Oak Cliff Cultural Center proudly presents Social Landscapes, a juried art exhibition that highlights various social justice conversations. This art exhibition opens on November 16, 2019 - January 4, 2020. A reception will be held on Saturday, Nov. 16th, from 5:30pm - 8pm. The exhibition and reception are FREE and OPEN to the public. 
+
+About the Exhibit: 
+The Oak Cliff Cultural Center is providing a platform for creative individuals to express their own perspective in a creative manner on various social justice topics. Selected artworks express emotional reactions, ideas, and intimate perspectives on mental health, immigration, identity, global warming, LGBTQ+, and more. Thus, initiating a visual dialogue between artists and viewers on issues that our modern society face. Social Landscapes include a range of 2-D works, sculptures, video installations.
+
+Participating Artists:
+Joe Giron, Joie Gonzalez, Chunyu Han, Karla Ceballos, Monica Criswell, Jessica Hills, Jaminet Rivera, Maria Hernandez, Melissa Gamez, Kael Alford, Kat Warwick, Eliana Miranda, Russell Brxn, Matthew Jones, Daryoush Ababaf, Suzanne Koett, Laura Hunt, Karen Jacobi, Raul Rodriguez, James Glenn, and Carlos Donjuan. 
+Come spend the day with us in Downtown Garland! The Saturday after Thanksgiving is the best shopping day of the year, and businesses found Only in Garland want to make sure you remember it.
+ 
+Reserve your spot now for event-exclusive discounts and a sampling of local restaurants sure to cure your turkey hangover. We’ll make sure you have a map of participating businesses and a schedule of events – oh that’s right, did we mention live music, a raffle, and a BIG surprise in public art? Start your holiday shopping season off right and put your money where your heart is!
+First Saturday of each month we are so happy to extend our Complimentary Chef Demo with Cafe Momentum! We love seeing what local ingredients they identify and incorporate into the menu from vendors inside The Shed. Come see how to shop The Shed, view a cooking demonstration and their final dish. See where The Shed can take you. 
+
+Mission: Cafe Momentum, a Dallas-based restaurant and culinary training facility, transforms young lives by equipping our community’s most at-risk youth with life skills, education and employment opportunities to help them achieve their full potential. 
+The Fort Worth Botanic Garden’s Japanese Fall Festival is expanding! Due to the popularity, it is breaking through the walls of the Japanese Garden and into the surrounding Gardens. This means more vendors, food trucks and more! 
+
+None of this would be possible without the support of the Fort Worth Japanese Society and their performers, vendors, cultural booths, and so much more.  
+Food, family and fun converge at Highland Park Village LOCAL, a seasonal neighborhood market featuring a variety of Dallas-Fort Worth’s favorite vendors, games and entertainment. Located in Livingston Court, between Celine and Balenciaga.
+Come out and Get a Taste of Black Dallas!!!!! This event is catered to all Black Restaurants, Catering Companies, and Chefs in the DFW Area!!!!! Come out and show the Community what you got!!!! This event will be free to the public!!! We will have Great Music, Games for the Kids, Giveaways, and a Awesome Atmosphere.This event will lead up to a Larger Event that will be happening the Summer of 2020!!!!! If you are interested in being a Food Vendor or Sponsor for the Event please contact Antoine White at 314-630-4465!!!!!!!
+Dear Santa, all we want for Christmas is farm fresh veggies and all-natural treats for our pups. It took lots of fresh baked cookies and handmade tamales, but we've convinced Santa to visit us THREE times this year! So bring the whole family--pets and all--to tell Santa who's been a good boy! Get prints instantly to capture your holiday memory forever. Prints $15 each. Also enjoy letters to Santa inside The Market!
+Join the Dallas Observer on Saturday, February 8th from 11:30AM – 2:30PM at the Dallas Farmers Market as we celebrate the 4th Annual The Morning After, A Dallas Observer Brunch Event.
+
+The Morning After is a Brunch Sampling event that will feature bites from local brunch hot spots, alongside drink samples & music — this is one weekend brunch you won't want to sleep through!
+
+2020 Participating Bites coming soon!
+Participants in this class learn how both Fresh Mozzarella and Fresh Ricotta are made.
+
+Upon arrival, students dress to make cheese by donning aprons and hairnets. The event begins with a behind-the-scenes tour of the cheese factory. Once the tour is complete, the hands-on cheesemaking course begins. Participants will first learn how to make Fresh Ricotta and scoop it into baskets.  Next, the participants are given a block of Fresh Mozzarella Curd, and they learn how to stretch and form many varieties of Mozzarella such as balls, Bocconcini, Mozzarella Rolls, and Queso Oaxaca.
+. 
+The event concludes with a cocktail party – a wine and cheese tasting of award-winning cheeses produced by the Mozzarella Company.
+.
+Each participant receives a Mozzarella Company apron to wear and take home and the participants also divide up the cheeses that they have made during the class to take home.
+
+Guests are advised to wear waterproof shoes with non-slip soles. All students must be 16 years or older.
+
+This hands-on cheesemaking class is limited to a minimum of 10 and a maximum of 20 persons.
+
+The tour, cheesemaking session, and tasting last approximately 2 hours.
+
+Cost $75 per person
+Join us for the 3rd Annual Light Up Lowest Greenville! 
+Come out for drink specials, Santa, fun and a great cause! 
+
+Santa will be at Greenville Avenue Pizza Company from 6PM-8PM and will "light up the block" at Tacos Mariachi at 7PM. We will be selling LGC mugs for $15 near GAPCo. Mugs get you access to the drink samples and specials on the block that night (listed below) from 4PM-8PM and on! 
+
+Reverse Food Truck will also be parked on Greenville Avenue to collect canned goods! Donate to get an ornament from your favorite business on the block! Most needed items are: Canned tuna and chicken, peanut butter, vegetable oil, spaghetti, elbow pasta, canned corn, kidney beans, pork & beans, pasta sauce, canned fruit, chicken noodle soup, Ramen noodles and canned green beans.
+The objective of this course is to learn a professional approach to writing a screenplay from conception of the idea through the outlining process and onto a finished short script. The focus will be on learning how to break a story, develop an idea, create character arcs, and craft your idea into a three act structure. To learn and practice the elements of a “Good Story Well Told”. To write from a visual an aural perspective and to develop good writing habits while discovering your creative voice. About Starling: Starling Thomas is a an award-winning writer and also director based out of Dallas with over seven years of experience writing and directing her first short film in 2012. Her award winning short Harvest has been making waves through the festival circuit this year. Her memoir is set to release in 2020. She currently works with DFA and Women in Film Dallas. Her mission is to help other writers discover their voice and tell the stories that the world is waiting for.
+Theater Indoor Show Seating is subject to change due to production Patrons Ages 2 and Older Require a Ticket.
+
+Tickets are on sale now. Buy tickets at LiveNation.com
+
+Day of show details: https://livemu.sc/2vOxDLW
+Venue A-Z Guide: https://livemu.sc/2OMvI1F 
+
+For VIP and premium seat packages, please contact our venue sales team by calling 214-421-6613 or by emailing CariMeloy@livenation.com
+http://livenationpremiumtickets.com/
+Join the UTD Gammas to celebrate our baby panthers and their hard work! Word on the block is that we're making history for the second semester in a row...
+Meet other creatives here in DFW w/ethio-jazz, oldies and habesha dance music as the soundscape. A relaxed enviroment with games like uno, connect four, cards  and drink/food specials.
+Get in the holiday spirit, and join Dallasites101 and 3 Nations Brewing for the 4th Annual Naughty or Nice Greenville Ave Bar Crawl!
+
+Time to grab your Santa suits, ugly sweaters, and other tacky holiday gear for our 4th Annual Naughty or Nice Bar Crawl along Greenville Avenue!
+
+This is our longest standing event that we first introduced back in 2016 - and also one of our favorites that we host too! Everyone is in the holiday spirit, and the event has a certain magic to it that you'll understand once you experience it!
+
+And we are SO excited to bring it back again, on December 7th from 12-6 pm, with an after party until 8 pm.
+Join us for our ten year anniversary this December 27 + 28 at Dallas Market Hall featuring Skrillex, Bassnectar, Virtual Self, Louis the Child, and MANY more. 
+Rainbow Vomit presents "Night Mode," a special experience that will let visitors see Dallas’ #1 rated immersive art exhibit in a new light! Experience NEW art installs in the space, along with the debut of a new secret room and interactive light features! Great for date night or group adventures, don't miss your chance to Rainbow Vomit like never before 🌈
+
+This limited capacity event for attendees aged 21+ will include special surprises and the rare chance to BYOB! We will also have beer and wine at the bar for VIP tickets. Space is limited, so grab your ticket today and get in on the fun!
+
+With the lights turned down and the space awash in luminous neon, the comic book colors drip down the walls to form the vibrant backdrop of this one-of-a-kind experience. The vibrating rhythms will rouse patrons into participation, their creative energy breathing life into this experience of pulsating music, dynamic community and a sense of togetherness. Become what the Dallas Art community aspires to be: One community. One entity. One love.
+
+Get ready to feel the music and play with the interactive Illumination Station while a curated sonic experience plays for your enjoyment. Group participation is highly encouraged in this interactive experience! Come jam with us in a whole new way to experience this art adventure and inspired photography studio.
+The beloved simulcast of the TEDWomen is returning to SMU on December 5, 2019. Join us at SMU’s Collins Center for a day of learning and community. Tickets to TEDxSMUWomen are $75 and include all of the live speakers sessions, workshops, lunch, and networking.
+The weekend is finally here! Unwind from the week by enjoying handcrafted art brought to you by Curate Local. Get the weekend started off right by indulging in local food, happy hour specials and listening to live entertainment. See you there!
+
+REMINDERS:
+Walk, ride, or drive—DFM is conveniently located and offers plenty of parking in the parking garage and on-street
+Pets are welcome in Pearl Plaza. Give Fido a bone and enjoy the night sky. DFM welcomes all ages with a family-friendly environment.
+Winner of 8 2012 Tony Awards® including BEST MUSICAL, Once the Musical is a truly original Broadway experience. Featuring an impressive ensemble of actor/musicians who play their own instruments onstage, ONCE tells the enchanting tale of a Dublin street musician who's about to give up on his dream when a beautiful young woman takes a sudden interest in his haunting love songs. As the chemistry between them grows, his music soars to powerful new heights... but their unlikely connection turns out to be deeper and more complex than your everyday romance. Emotionally captivating and theatrically breathtaking, ONCE draws you in from the very first note and never lets go. It's an unforgettable story about going for your dreams and the power of music to connect us all.
+
+Available only to 2019/2020 Broadway Series season ticket holders. You will be presented with the opportunity to add tickets when you subscribe. Get your season tickets today ➡  bit.ly/2I005kX
+The most dazzling and spectacular time of the year is here!  Vitruvian Park transforms into a magical holiday wonderland during Vitruvian Lights; Friday, November 29, 2019 – Wednesday, January 1, 2020.
+
+On November 29, we “flip the switch” at 6:00pm!  The merriment continues with a performance by the Jordan Kahn Orchestra, gourmet food trucks, sweet treats, FREE photos with Santa, classic holiday characters, elf balloon artist, and more!
+
+**An official event photographer will be capturing photos throughout Vitruvian Park; those in attendance may be pictured in event marketing.**
+
+Vitruvian Lights Special Event Dates & Performances:
+
+Friday, November 29, 2019 from 6:00pm – 10:00pm – Jordan Kahn Orchestra
+
+Saturday, December 7, 2019 from 6:00pm – 10:00pm – Phat Strad
+
+Saturday, December 14, 2019 from 6:00pm – 10:00pm – Sonny’s Holliday
+
+ PARKING – TBD
+
+Event Parking is strictly prohibited at communities; Addison Apartments at the Park, Fiori, Savoye, Savoye Squared and Vitruvian West.  Signage positioned on Spring Valley Road and Vitruvian Way for your convenience; follow to designated parking locations (TBD).
+
+In the event of inclement weather, Vitruvian Lights is subject to cancellation.  Visit the Vitruvian Park website events calendar and Vitruvian Park social media for related updates.
+
+Vitruvian Park would like to thank its 2019 Vitruvian Lights Sponsors; the Town of Addison & UDR.
+African-American Heritage and Civil Rights Tour of the South/East Dallas and Fair Park Area This tour is recommended for 12 yrs of age and up and all races and Ethnic groups.  On this tour you will explore the African American Culture  and Civil Rights movement in Dallas and its continued influence and impact on today's society. We will tour the homes of former local activist and entertainment such as Juanita Craft, Dr. Ward, Ray Charles and other in the S.E. Dallas area. There will be a 45 minute stop for lunch on your own with a variety of cuisines to choose from or you may bring your own lunch to enjoy at that time. Please be advised that tour payments are refundable up to 6:00 P.M., Friday November 15, 2019 Central Time.
+The Chi Omega Christmas Market (COCM) offers a unique one-of-a-kind shopping experience with over 220 merchants showcasing gifts for every age including holiday decor, clothing and accessories, home accents, children’s toys, food gifts, and much more! In its 41 year history, COCM has distributed over $8.4 million dollars to the Dallas community through grants to local charities and collegiate scholarships. 
+
+Funds for Chi Omega Christmas Market beneficiaries are derived solely from ticket sales, merchant booth fees, donations and underwriting. COCM receives no monies from merchant booth sales. The 2018 market provided donations totaling $435,000 to worthy local organizations. 
+
+We are thrilled to continue the tradition of giving again in 2019!
+We'll be meeting up after the police oversight meeting to discuss our paid sick campaign, updates on the CPOB, and our upcoming fall campaigns.
+
+Please note: we are meeting up after the Community Police Oversight Board (CPOB) meeting. We encourage yall to attend this as well. It begins at 5:30 pm:
+It's the most wonderful time of the year for some extra special, holiday cheer!
+
+The Shops of Deep Ellum invite you to hop in your sleigh, and celebrate the merriest Sip&Shop of the season at the 6th annual Deep Ellum Wine Walk: Holiday Soirée! 
+
+Join us for a magical stroll through the neighborhood, complete with exciting, in-store events and promotions at your favorite spots in Dallas' premiere entertainment district, filled with amazing restaurants, legendary music venues, dazzling street art, and so much more.
+
+Tell Santa what you're really dreaming of: The Jolly Old Elf himself returns again this year, all the way from the North Pole (aka his workshop at  Taboo Tattoo Studio), to roll out the red carpet for your winter wonderland adventure. Complimentary photos included!
+
+Click the link to secure your spot, follow us on instagram and facebook, and stay tuned for all the latest updates from Discover Deep Ellum.
+
+See you there!
+Anime fans rejoice as you hear about an exciting, fun second time anime convention in Dallas, Texas. Join us for a rip-rolling heckofa good time weekend in the winter. We’ve got three days of fun and cosplay ready to go for you! Weekend admission is $20 in advance, $40 at the door.
+
+Meet the team behind Anime Dallas!
+
+Chairman: JOHN SWASEY
+
+A word from the chairman.
+Hey there Boys and girls and grown-ups too. I am fired up and honored to present to you the second Anime Dallas. Coming to you in November of 2019!!! Texas is an anime Mecca, and I decided to put on Anime Dallas as an experience where my friends and I get to share even more anime excitement (and maybe some whiskey) with you!
+
+Our first year had more than sixteen amazing guests, and over 2,000 wonderful anime fans showed up. We can’t wait to show you what we have in store for the next convention.
+
+We want Anime Dallas to be a fun experience that is really fan-focused. It’s not all about big money. It’s about you. We want this to be a big anime party where you’re king. Thank you for looking at Anime Dallas and we will see you in November.
+
+Let’s party!!!

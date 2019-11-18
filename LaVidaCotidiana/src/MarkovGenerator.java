@@ -103,7 +103,9 @@ public class MarkovGenerator<T> extends ProbabilityGenerator{
 	//markov generator generate() comes from the prob gen's generate()
 	public T generate(T initToken){ //generate one note first from the prob gen generate
 		assert(markovProbabilityArr.size()>1); //this object hasn't been trained
+		//System.out.println("Alpa " + alphabetArr);
 		int rowNum = alphabetArr.indexOf(initToken); //finds initial token in alphabet array
+		//System.out.println("Markov gen row num "+ initToken + " " + rowNum);
 		ArrayList <Float> row =  transTable.get(rowNum); //gets token's slot in probabilities transition table
 		probabilities(row, rowNum); //calls probability row
 		if(rowNum == indexWithNoChance) {

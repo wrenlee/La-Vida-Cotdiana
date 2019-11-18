@@ -34,7 +34,7 @@ public class LaVidaCotidianaMain extends PApplet {
 	ArrayList<ArrayList<String>> loadedText; // arraylist of tokens
 	ArrayList<String> filePath;
 	private ArrayList<String> tokens;
-	
+
 	private static final String fPUNCTUATION = "\",.!?;:()/\\";
 	private static final String fENDPUNCTUATION = ".!?;,";
 	private static final String fREALENDPUNCTUATION = ".!?";
@@ -48,7 +48,7 @@ public class LaVidaCotidianaMain extends PApplet {
 	MidiFileToNotes midiNotes;
 	MarkovGeneratorN rhythm;
 	MarkovGeneratorN pitch;
-	
+
 	ArrayList<String> possibleFirstString;
 
 	// generators
@@ -57,7 +57,14 @@ public class LaVidaCotidianaMain extends PApplet {
 	MarkovGeneratorN eventSubject;
 
 	// screens
+	int screenState;
 	Screen[] screenArr;
+
+	// button
+	Button startButton;
+
+	// mouse
+	Mouse mouse;
 
 	// scanner
 	Scanner scanner;
@@ -74,9 +81,14 @@ public class LaVidaCotidianaMain extends PApplet {
 
 	public void setup() {
 		// screen initialization
+		screenState = 0;
 		screenArr = new Screen[4];
-		screenArr[0] = new StartScreen(this, 's', pastelPink);
-		screenArr[1] = new DesktopScreen(this, 'd', pastelGreen);
+		screenArr[0] = new StartScreen(this, 's', pastelPink); // start
+		screenArr[1] = new DesktopScreen(this, 'd', pastelGreen); // desktop
+
+		// buttons
+		startButton = new Button(this, width / 2 - 50, height / 2 - 25);
+		mouse = new Mouse(this);
 
 		order = 2;
 
@@ -85,22 +97,23 @@ public class LaVidaCotidianaMain extends PApplet {
 		possibleFirstString = new ArrayList<String>();
 		eventText = new MarkovGeneratorN();
 		eventSubject = new MarkovGeneratorN();
-		
+
 		// scanner
 //		scanner = new Scanner(System.in);
 //		name = scanner.nextLine();
 
-		//songs
+		// songs
 		filePath = new ArrayList<String>();
 //		filePath.add(getPath("mid/Coldplay - Viva La Vida.mid"));//coldplay
 //		filePath.add(getPath("mid/John Denver - Take Me Home Country Roads.mid"));//country roads
 //		filePath.add(getPath("mid/Queen - Bohemian Rhapsody,mid"));//queen
 //		filePath.add(getPath("mid/Tokyo Ghoul - Unravel.mid"));//tokyo ghoul
-		//midinotes array
-		//one player
-		//pitch array
-		//rhythm array
-		
+
+		// midinotes array
+		// one player
+		// pitch array
+		// rhythm array
+
 //		midiNotes = new MidiFileToNotes(filePath);
 //		midiNotes.setWhichLine(0);
 //		player = new MelodyPlayer(this, 100.0f);
@@ -113,75 +126,160 @@ public class LaVidaCotidianaMain extends PApplet {
 //		player.setup();
 //		player.setMelody(pitch.generateMultiple(20));
 //		player.setRhythm(rhythm.generateMultiple(20));
-		
+
 		tokenizer();
 		train();
 		firstString();
-		generate();
+		generateEvent();
 	}
 
 	public void draw() {
 //		if(isPlay) {
 //			player.play();
 //		}
-		screenArr[0].display();
-//		if(screenArr[0].getName() == 'd'){
-//			screenArr[1].display(); //desktop
+
+		// screenArr[0].display();
+		if (screenState == 0) {
+			screenArr[0].display();
+			startButton.display("Click to start");
+			if (startButton.isOver()) {
+				screenState = 1;
+			}
+		}
+		//System.out.println(screenState);
+//		} else if (screenState == 1) {
+//			desktop();
 //		}
-		//generate();
+
+		// mouse
+		mouse.display();
 	}
 
-	public void tokenizer() {
-		loadNovel("data/dedman_emails_body.txt", 0);
-		loadNovel("data/dedman_emails_subject.txt", 1);
+	public void start() {
+		// screenArr[0].display();
+		// startButton.display("Click to start");
+//		if (startButton.isOver()) {
+//			screenState = 1;
+//		}
 	}
-	
+//
+//	public void desktop() {
+//		screenArr[1].display();
+//	}
+
+	public void tokenizer() {
+		loadNovel("data/dedman_emails_body.txt");
+		// loadNovel("data/dedman_emails_subject.txt");
+	}
+
 	public void firstString() {
 		possibleFirstString.add("The");
 		possibleFirstString.add("Join");
 		possibleFirstString.add("Come");
-//		possibleFirstString.add("This");
-//		possibleFirstString.add("You");
-//		possibleFirstString.add("At");
-//		possibleFirstString.add("Free");
-//		possibleFirstString.add("Learn");
+		possibleFirstString.add("This");
+		possibleFirstString.add("You");
 	}
 
 	public void train() {
 		probGen.train(loadedText.get(0));
 		eventText.train(loadedText.get(0), order);
-		eventSubject.train(loadedText.get(1), order);
+		// eventSubject.train(loadedText.get(1), 1);
 	}
 
-	public void generate() {
+	public void generateEvent() {
 		// generate initial string
 		ArrayList<String> initString = new ArrayList<String>();
 		int rand = (int) random(possibleFirstString.size());
-		initString.add(possibleFirstString.get(rand));
-		int i = 1;
-		while (i < order) {
-			//int index = eventText.getSeqArr().indexOf(initString); // if it's not a sequence, reroll
-			//if (index == -1) {
-				ArrayList<String> lastToken = new ArrayList<String>(); //last token
-				lastToken.add(initString.get(i - 1));
-				String gen = (String) eventText.generate(lastToken);
-				//ArrayList<String> gen = new ArrayList<String>();
-				//String gen = eventText.generateMultiple(lastToken, order);
-				//System.out.println(gen);
-				initString.add(gen);
-			//}
+		String firstGen = possibleFirstString.get(rand);
+		initString.add(firstGen);
+		String email = "";
+		email = email + firstGen + " ";
+		for (int i = 0; i < order; i++) {
+			String gen = (String) eventText.generate(initString);
+			initString.add(gen);
+			email = email + gen + " ";
+		}
+
+		// int index = eventText.getSeqArr().indexOf(initString); // if it's not a
+		// sequence, reroll
+		// if (index == -1) {
+		// ArrayList<String> lastToken = new ArrayList<String>(); //last token
+		// lastToken.add(initString.get(i - 1));
+		// ArrayList<String> gen = new ArrayList<String>();
+		// String gen = eventText.generateMultiple(lastToken, order);
+		// System.out.println(gen);
+		// }
 //			else {
 //				String gen = (String) eventText.generate(initString);
 //				initString.add(gen);
-			//}
-			i++;
-		} // generate initial string
-		System.out.print(initString);
-		int numGen = (int) random(300);
-		System.out.println(eventText.generateMultiple(initString, numGen));
+		// }
+		// i++;
+		// } // generate initial string
+
+		// System.out.print(initString);
+
+		// generate moar
+		ArrayList<String> genArr = new ArrayList<String>();
+		int numGen = (int) random(10, 50);
+		genArr = eventText.generateMultiple(initString, numGen);
+		// System.out.println(genArr);
+
+//		for (int k = 0; k < initString.size(); k++) {
+//			genArr.add(initString.get(k));
+//		}
+
+		// add a period
+//		for (int i = 0; i < genArr.size(); i++) {
+//			ArrayList<Character> charArr = new ArrayList<Character>();
+//			String tempStr = genArr.get(i);
+//			// System.out.println(tempStr.charAt(i));
+//			// System.out.println("Temp String " + tempStr);
+//			// System.out.println(tempStr.length());
+//			for (int j = 0; j < tempStr.length(); j++) {
+//				charArr.add(tempStr.charAt(j));
+//				// System.out.println("Char Arr at " + charArr);
+//				float randomNum = random(20);
+//				charArr.get(j);
+//				if (Character.isUpperCase(charArr.get(j)) == true && randomNum > 5) {
+//					// System.out.println("PERIOD");
+//					genArr.set(j, genArr.get(i) + "."); // add a period
+////					if (i <= genArr.size()) {//capitalize next word
+////						String nextWrd = genArr.get(i + 1); // next word
+////						Character nextChar = nextWrd.charAt(0);
+////						//System.out.println(nextWrd);
+////						//System.out.println(nextChar);
+////						Character.toUpperCase(nextChar);
+////						//System.out.println(nextChar);
+////					}
+//				}
+//			}
+//			// some exceptions
+//			if (genArr.get(i) == "https") {
+//				genArr.set(i, "https://");
+//			} // https//
+//			else if (genArr.get(i) == "www") {
+//				genArr.set(i, "www.");
+//			} // www.
+//			else if (genArr.get(i) == "org") {
+//				genArr.set(i, ".org");
+//			} // .org
+//			else if (genArr.get(i) == "com") {
+//				genArr.set(i, ".com");
+//			} // .com
+//			else if (genArr.get(i) == "edu") {
+//				genArr.set(i, ".edu");
+//			} // .com
+//		} // gen array loop
+
+		// add spaces
+		for (int j = 0; j < genArr.size() - 1; j++) {
+			email = email + genArr.get(j) + " ";
+		}
+		email = email + genArr.get(genArr.size() - 1) + "."; // end with period
+		System.out.println("Email: " + email);
 	}
 
-	void loadNovel(String p, int num) {
+	void loadNovel(String p) {
 		String filePath = getPath(p);
 		Path path = Paths.get(filePath);
 		tokens = new ArrayList<String>();

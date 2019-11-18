@@ -3,7 +3,7 @@ import java.util.*;
 
 public class StartScreen extends Screen {
 
-	Button startButton;
+	//Button startButton;
 	String name;
 	Scanner scanner; 
 
@@ -15,7 +15,7 @@ public class StartScreen extends Screen {
 		height = 800;
 		screenName = name;
 		color = col;
-		startButton = new Button(parent, width / 2 - 50, height / 2 - 25);
+		//startButton = new Button(parent, width / 2 - 50, height / 2 - 25);
 		scanner = new Scanner(System.in);
 	}
 
@@ -31,14 +31,12 @@ public class StartScreen extends Screen {
 		parent.noStroke();
 		parent.fill(color);
 		parent.rect(x, y, width, height);
-		parent.text("Welcome to La Vida Cotidiana", width / 2 - 300, height / 2 - 50);
-		startButton.display("Click to start");
-	}
-	
-	public Character getName() {
-		if(startButton.isOver()) {
-			screenName = 'd';
-		}
-		return screenName;
+//		startButton.display("Click to start");
+//		
+//		startButton.isOver();
+//		if(startButton.isOver()) {
+//			screenName = 'd';
+//			System.out.println(screenName);
+//		}
 	}
 }
