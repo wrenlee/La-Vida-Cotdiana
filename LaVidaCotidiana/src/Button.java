@@ -25,6 +25,15 @@ public class Button {
 		width = 10;
 		height = 50;
 	}
+	
+	Button(PApplet p, int xPos, int yPos, int col) {
+		parent = p;
+		x = xPos;
+		y = yPos;
+		color = col; // green
+		width = 10;
+		height = 50;
+	}
 
 	public void display(String mes) {
 		message = mes;
@@ -38,24 +47,13 @@ public class Button {
 		parent.fill(0);
 		parent.text(message, x - (width / 2) + mesLen, y + height / 2);
 	}
-	
+
 	public boolean isOver() {
-		//System.out.println("IS OVER function");
-		//System.out.println(x);
-		//System.out.println("X " + (x - (width / 2)) + ", x + width " + (x + (width / 2)));
-		//System.out.println(parent.mouseX);
-		//System.out.println(width);
 		int xBound1 = x - (width / 2);
 		int xBound2 = x + (width / 2);
-//		System.out.println(xBound1);
-//		System.out.println(xBound2);
-		if ((parent.mouseX > xBound1 && parent.mouseX < xBound2)){
-//			 && (parent.mouseY > y && parent.mouseY < y + height)
-//				&& parent.mousePressed == true) {
+		if ((parent.mouseX > xBound1 && parent.mouseX < xBound2) && (parent.mouseY > y && parent.mouseY < y + height)
+				&& parent.mousePressed == true) {
 			isClicked = true;
-			//System.out.println("is clicked");
-		} else {
-			isClicked = false;
 		}
 		return isClicked;
 	}

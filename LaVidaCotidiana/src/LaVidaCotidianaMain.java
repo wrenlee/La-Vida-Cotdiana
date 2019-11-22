@@ -4,6 +4,7 @@
 //main file!
 
 import processing.core.*;
+import interfascia.*;
 
 import java.util.*;
 import java.io.*;
@@ -29,6 +30,8 @@ public class LaVidaCotidianaMain extends PApplet {
 	int pastelYellow = color(226, 240, 203);
 	int pastelPurple = color(219, 196, 223);
 	int pastelBlue = color(199, 206, 234);
+	int white = color(231, 240, 241);
+	PFont font;
 
 	// text tokenizer
 	ArrayList<ArrayList<String>> loadedText; // arraylist of tokens
@@ -45,30 +48,42 @@ public class LaVidaCotidianaMain extends PApplet {
 	// music player
 	boolean isPlay;
 	MelodyPlayer player;
-	MidiFileToNotes midiNotes;
-	MarkovGeneratorN rhythm;
-	MarkovGeneratorN pitch;
+	ArrayList<MidiFileToNotes> midiNotes;
+	ArrayList<MarkovGeneratorN> rhythm;
+	ArrayList<MarkovGeneratorN> pitch;
 
 	ArrayList<String> possibleFirstString;
 
 	// generators
-	ProbabilityGenerator probGen;
+	ProbabilityGenerator probGenDedman;
+	ProbabilityGenerator probGenDining;
 	MarkovGeneratorN eventText;
 	MarkovGeneratorN eventSubject;
+	MarkovGeneratorN diningText;
+	MarkovGeneratorN jobText;
+	MarkovGeneratorN jobLocation;
+	ArrayList<String> subGenerated;
+	ArrayList<ArrayList<String>> genEmail;
+	ArrayList<String> emailText;
 
 	// screens
 	int screenState;
 	Screen[] screenArr;
+	PImage background;
+	Screen screen;
 
 	// button
 	Button startButton;
+	EmailButton emailButton;
+	MusicButton musicButton;
+	Button nameButton;
+	MusicButton coldplay;
+	MusicButton countryRoads;
+	MusicButton queen;
+	MusicButton anime;
+	Button backButton;
 
-	// mouse
-	Mouse mouse;
-
-	// scanner
-	Scanner scanner;
-	String name;
+	String name = "";
 
 	public static void main(String[] args) {
 		PApplet.main("LaVidaCotidianaMain");
@@ -76,100 +91,255 @@ public class LaVidaCotidianaMain extends PApplet {
 	}
 
 	public void settings() {
-		size(1300, 800);
+		// size(1300, 800);
+		fullScreen();
 	}
 
 	public void setup() {
+		font = createFont("data/StrawberryMilkshake.ttf", 17);
+		textFont(font);
+
 		// screen initialization
 		screenState = 0;
-		screenArr = new Screen[4];
+		screenArr = new Screen[6];
 		screenArr[0] = new StartScreen(this, 's', pastelPink); // start
 		screenArr[1] = new DesktopScreen(this, 'd', pastelGreen); // desktop
+		screenArr[2] = new EmailScreen(this, 'e', pastelPurple); // email
+		screenArr[3] = new MusicScreen(this, 'm', pastelGreen); // music
+		screenArr[4] = new EmailReadScreen(this, 'r', white);
+		screenArr[5] = new AboutScreen(this, 'a', pastelPink);
+		
+		screen = new StartScreen(this, 's', pastelPink);
 
 		// buttons
-		startButton = new Button(this, width / 2 - 50, height / 2 - 25);
-		mouse = new Mouse(this);
+		startButton = new Button(this, width / 2, height / 2);
+		emailButton = new EmailButton(this, 100, 200, pastelRed);
+		musicButton = new MusicButton(this, 100, 500, pastelBlue);
+		nameButton = new Button(this, 0, 0);
+		backButton = new Button(this, 70, 40);
+		coldplay = new MusicButton(this, 500, 300, pastelBlue);
+		countryRoads = new MusicButton(this, 500, 500, pastelOrange);
+		queen = new MusicButton(this, 800, 300, pastelOrange);
+		anime = new MusicButton(this, 800, 500, pastelRed);
 
-		order = 2;
+		order = 3;
 
+		// generators
 		loadedText = new ArrayList<ArrayList<String>>();
-		probGen = new ProbabilityGenerator();
+		probGenDedman = new ProbabilityGenerator();
+		probGenDining = new ProbabilityGenerator();
 		possibleFirstString = new ArrayList<String>();
 		eventText = new MarkovGeneratorN();
 		eventSubject = new MarkovGeneratorN();
-
-		// scanner
-//		scanner = new Scanner(System.in);
-//		name = scanner.nextLine();
+		diningText = new MarkovGeneratorN();
+		jobText = new MarkovGeneratorN();
+		jobLocation = new MarkovGeneratorN();
+		genEmail = new ArrayList<ArrayList<String>>();
+		emailText = new ArrayList<String>();
+		subGenerated = new ArrayList<String>();
 
 		// songs
-		filePath = new ArrayList<String>();
-//		filePath.add(getPath("mid/Coldplay - Viva La Vida.mid"));//coldplay
-//		filePath.add(getPath("mid/John Denver - Take Me Home Country Roads.mid"));//country roads
-//		filePath.add(getPath("mid/Queen - Bohemian Rhapsody,mid"));//queen
-//		filePath.add(getPath("mid/Tokyo Ghoul - Unravel.mid"));//tokyo ghoul
+		int orderPitch = 2;
+		int orderRhythm = 2;
+		filePath = new ArrayList<String>(4);
+		filePath.add(getPath("mid/Coldplay - Viva La Vida.mid"));// coldplay
+		filePath.add(getPath("mid/John Denver - Take Me Home Country Roads.mid"));// country roads
+		filePath.add(getPath("mid/Queen - Bohemian Rhapsody.mid"));// queen
+		filePath.add(getPath("mid/Tokyo Ghoul - Unravel.mid"));// tokyo ghoul
+		midiNotes = new ArrayList<MidiFileToNotes>(4);
+		for (int i = 0; i < 4; i++) {
+			MidiFileToNotes path = new MidiFileToNotes(filePath.get(i));
+			midiNotes.add(path);
+			midiNotes.get(i).setWhichLine(0);
+		}
+		player = new MelodyPlayer(this, 100.0f);
 
-		// midinotes array
-		// one player
-		// pitch array
-		// rhythm array
-
-//		midiNotes = new MidiFileToNotes(filePath);
-//		midiNotes.setWhichLine(0);
-//		player = new MelodyPlayer(this, 100.0f);
-//		pitch = new MarkovGeneratorN<Integer>();
-//		rhythm = new MarkovGeneratorN<Double>();
-//		int orderPitch = 2;
-//		int orderRhythm = 2;
-//		pitch.train(midiNotes.getPitchArray(), orderPitch);
-//		rhythm.train(midiNotes.getRhythmArray(), orderRhythm);
-//		player.setup();
-//		player.setMelody(pitch.generateMultiple(20));
-//		player.setRhythm(rhythm.generateMultiple(20));
+		pitch = new ArrayList<MarkovGeneratorN>(4);
+		rhythm = new ArrayList<MarkovGeneratorN>(4);
+//		for (int i = 0; i < 4; i++) {// train generators
+//			pitch.get(i).train(midiNotes.get(i).getPitchArray(), orderPitch);
+//			rhythm.get(i).train(midiNotes.get(i).getRhythmArray(), orderPitch);
+//		}
+		player.setup();
 
 		tokenizer();
 		train();
 		firstString();
-		generateEvent();
+		generate();
+		for (int i = 0; i < 8; i++) {
+			generateEventSubject();
+		}
 	}
 
 	public void draw() {
-//		if(isPlay) {
-//			player.play();
-//		}
+		noStroke();
 
-		// screenArr[0].display();
-		if (screenState == 0) {
-			screenArr[0].display();
-			startButton.display("Click to start");
-			if (startButton.isOver()) {
-				screenState = 1;
-			}
-		}
-		//System.out.println(screenState);
+		//start();
+	//	if (screenState == 0) {
+			start();
+	//	}
 //		} else if (screenState == 1) {
 //			desktop();
+//		} else if (screenState == 2) {
+//			email();
+//		} else if (screenState == 3) {
+//			music();
 //		}
+//		else if (screenState == 4) {
+//			about();
+//		}
+//		
+//		screenArr[0].display();
+//		startButton.display("Click to start");
+//		if (startButton.isOver()) {
+//			screenArr[1].display();
+//			emailButton.display("Email");
+//			musicButton.display("Music Player");
+//			if (emailButton.isOver()) {
+//				screenArr[2].display();
+//				screenArr[2].init(subGenerated, emailText, subGenerated.size(), emailText.size());
+//				for (int i = 0; i < subGenerated.size(); i++) {
+//					screenArr[2].displayEmail(subGenerated.get(i), i);
+//				}
+//				// screenArr[2].isOver(emailText);
+//				backButton.display("Back");
+//				if (backButton.isOver()) {
+//					screenArr[1].display();
+//					emailButton.display("Email");
+//					musicButton.display("Music Player");
+//				}
+//			} else if (musicButton.isOver()) {
+//				screenArr[3].display();
+//				coldplay.display("Modern Pop");
+//				if (coldplay.isOver()) {
+//					player.setMelody(pitch.get(0).generateMultiple(20));
+//					player.setRhythm(rhythm.get(0).generateMultiple(20));
+//					isPlay = true;
+//				}
+//				countryRoads.display("Meme-y");
+//				if (countryRoads.isOver()) {
+//					player.setMelody(pitch.get(1).generateMultiple(20));
+//					player.setRhythm(rhythm.get(1).generateMultiple(20));
+//					isPlay = true;
+//				}
+//				queen.display("Classic Pop");
+//				if (queen.isOver()) {
+//					player.setMelody(pitch.get(2).generateMultiple(20));
+//					player.setRhythm(rhythm.get(2).generateMultiple(20));
+//					isPlay = true;
+//				}
+//				anime.display("Nerdy");
+//				if (anime.isOver()) {
+//					player.setMelody(pitch.get(3).generateMultiple(20));
+//					player.setRhythm(rhythm.get(3).generateMultiple(20));
+//					isPlay = true;
+//				}
+//				backButton.display("Back");
+//				if (backButton.isOver()) {
+//					screenArr[1].display(name);
+//					emailButton.display("Email");
+//					musicButton.display("Music Player");
+//				}
+//
+//				backButton.display("Back");
+//				if (backButton.isOver()) {
+//					screenState = 1;
+//				}
+//			}
+		}
 
-		// mouse
-		mouse.display();
-	}
+//		if (isPlay) {
+//			player.play();
+//		}
+	//}
 
 	public void start() {
-		// screenArr[0].display();
-		// startButton.display("Click to start");
+		screen.display();
+//		screenArr[0].display();
+//		startButton.display("Click to start");
 //		if (startButton.isOver()) {
 //			screenState = 1;
 //		}
 	}
 //
 //	public void desktop() {
-//		screenArr[1].display();
+//		screenArr[1].display(name);
+//		emailButton.display("Email");
+//		musicButton.display("Music Player");
+//		if (emailButton.isOver()) {
+//			screenState = 2;
+//		} else if (musicButton.isOver()) {
+//			screenState = 3;
+//		}
+//	}
+//
+//	public void email() {
+//		screenArr[2].display();
+//		screenArr[2].init(subGenerated, emailText, subGenerated.size(), emailText.size());
+//		for (int i = 0; i < subGenerated.size(); i++) {
+//			screenArr[2].displayEmail(subGenerated.get(i), i);
+//		}
+//		// screenArr[2].isOver(emailText);
+//		backButton.display("Back");
+//		if (backButton.isOver()) {
+//			screenState = 1;
+//		}
+//
+//	}
+//
+//	public void music() {
+//		screenArr[3].display();
+//		coldplay.display("Modern Pop");
+//		if (coldplay.isOver()) {
+//			player.setMelody(pitch.get(0).generateMultiple(20));
+//			player.setRhythm(rhythm.get(0).generateMultiple(20));
+//			isPlay = true;
+//		}
+//		countryRoads.display("Meme-y");
+//		if (countryRoads.isOver()) {
+//			player.setMelody(pitch.get(1).generateMultiple(20));
+//			player.setRhythm(rhythm.get(1).generateMultiple(20));
+//			isPlay = true;
+//		}
+//		queen.display("Classic Pop");
+//		if (queen.isOver()) {
+//			player.setMelody(pitch.get(2).generateMultiple(20));
+//			player.setRhythm(rhythm.get(2).generateMultiple(20));
+//			isPlay = true;
+//		}
+//		anime.display("Nerdy");
+//		if (anime.isOver()) {
+//			player.setMelody(pitch.get(3).generateMultiple(20));
+//			player.setRhythm(rhythm.get(3).generateMultiple(20));
+//			isPlay = true;
+//		}
+//		backButton.display("Back");
+//		if (backButton.isOver()) {
+//			screenArr[1].display(name);
+//			emailButton.display("Email");
+//			musicButton.display("Music Player");
+//		}
+//
+//		backButton.display("Back");
+//		if (backButton.isOver()) {
+//			screenState = 1;
+//		}
+//	}
+//	
+//	public void about() {
+//		screenArr[4].display();
+//		backButton.display("Back");
+//		if (backButton.isOver()) {
+//			screenState = 1;
+//		}
 //	}
 
 	public void tokenizer() {
 		loadNovel("data/dedman_emails_body.txt");
-		// loadNovel("data/dedman_emails_subject.txt");
+		loadNovel2("data/dedman_emails_subject.txt");
+		loadNovel("data/dining_email.txt");
+		loadNovel("data/job_title_email.txt");
+		loadNovel("data/job_location.txt");
 	}
 
 	public void firstString() {
@@ -181,12 +351,16 @@ public class LaVidaCotidianaMain extends PApplet {
 	}
 
 	public void train() {
-		probGen.train(loadedText.get(0));
+		probGenDedman.train(loadedText.get(0));
 		eventText.train(loadedText.get(0), order);
-		// eventSubject.train(loadedText.get(1), 1);
+		eventSubject.train(loadedText.get(1), order);
+		probGenDining.train(loadedText.get(2));
+		diningText.train(loadedText.get(2), order);
+		jobText.train(loadedText.get(3), order);
+		jobLocation.train(loadedText.get(4), order);
 	}
 
-	public void generateEvent() {
+	public void generate() {
 		// generate initial string
 		ArrayList<String> initString = new ArrayList<String>();
 		int rand = (int) random(possibleFirstString.size());
@@ -200,83 +374,45 @@ public class LaVidaCotidianaMain extends PApplet {
 			email = email + gen + " ";
 		}
 
-		// int index = eventText.getSeqArr().indexOf(initString); // if it's not a
-		// sequence, reroll
-		// if (index == -1) {
-		// ArrayList<String> lastToken = new ArrayList<String>(); //last token
-		// lastToken.add(initString.get(i - 1));
-		// ArrayList<String> gen = new ArrayList<String>();
-		// String gen = eventText.generateMultiple(lastToken, order);
-		// System.out.println(gen);
-		// }
-//			else {
-//				String gen = (String) eventText.generate(initString);
-//				initString.add(gen);
-		// }
-		// i++;
-		// } // generate initial string
-
-		// System.out.print(initString);
-
 		// generate moar
-		ArrayList<String> genArr = new ArrayList<String>();
+		ArrayList<ArrayList<String>> genArr = new ArrayList<ArrayList<String>>();
 		int numGen = (int) random(10, 50);
-		genArr = eventText.generateMultiple(initString, numGen);
+		for (int i = 0; i < 5; i++) {
+			genArr.add(eventText.generateMultiple(initString, numGen));
+		}
+//		for (int i = 5; i < 7; i++) {
+//			genArr.add(jobText.generateMultiple(initString, numGen));
+//		}
+//		for(int i = 7; i < 10; i++) {
+//			genArr.add(jobText.generateMultiple(initString, numGen));
+//		}
 		// System.out.println(genArr);
 
-//		for (int k = 0; k < initString.size(); k++) {
-//			genArr.add(initString.get(k));
-//		}
-
-		// add a period
-//		for (int i = 0; i < genArr.size(); i++) {
-//			ArrayList<Character> charArr = new ArrayList<Character>();
-//			String tempStr = genArr.get(i);
-//			// System.out.println(tempStr.charAt(i));
-//			// System.out.println("Temp String " + tempStr);
-//			// System.out.println(tempStr.length());
-//			for (int j = 0; j < tempStr.length(); j++) {
-//				charArr.add(tempStr.charAt(j));
-//				// System.out.println("Char Arr at " + charArr);
-//				float randomNum = random(20);
-//				charArr.get(j);
-//				if (Character.isUpperCase(charArr.get(j)) == true && randomNum > 5) {
-//					// System.out.println("PERIOD");
-//					genArr.set(j, genArr.get(i) + "."); // add a period
-////					if (i <= genArr.size()) {//capitalize next word
-////						String nextWrd = genArr.get(i + 1); // next word
-////						Character nextChar = nextWrd.charAt(0);
-////						//System.out.println(nextWrd);
-////						//System.out.println(nextChar);
-////						Character.toUpperCase(nextChar);
-////						//System.out.println(nextChar);
-////					}
-//				}
-//			}
-//			// some exceptions
-//			if (genArr.get(i) == "https") {
-//				genArr.set(i, "https://");
-//			} // https//
-//			else if (genArr.get(i) == "www") {
-//				genArr.set(i, "www.");
-//			} // www.
-//			else if (genArr.get(i) == "org") {
-//				genArr.set(i, ".org");
-//			} // .org
-//			else if (genArr.get(i) == "com") {
-//				genArr.set(i, ".com");
-//			} // .com
-//			else if (genArr.get(i) == "edu") {
-//				genArr.set(i, ".edu");
-//			} // .com
-//		} // gen array loop
-
 		// add spaces
-		for (int j = 0; j < genArr.size() - 1; j++) {
-			email = email + genArr.get(j) + " ";
+		for (int i = 0; i < genArr.size(); i++) {
+			for (int j = 0; j < genArr.get(i).size() - 1; j++) {
+			}
+			email = email + genArr.get(genArr.size() - 1) + "."; // end with period
+			emailText.add(email); // add to entire array email
 		}
-		email = email + genArr.get(genArr.size() - 1) + "."; // end with period
-		System.out.println("Email: " + email);
+	}
+
+	public void generateEventSubject() {
+		// variables
+		ProbabilityGenerator firstTokeSub = new ProbabilityGenerator();
+		ArrayList<String> firstTokeSubject = new ArrayList<String>();
+		ArrayList<String> gen = new ArrayList<String>();
+		int rand = (int) random(1, 5);
+		String subject = "";
+		ArrayList<String> subjectArr = new ArrayList<String>();
+
+		firstTokeSub.train(loadedText.get(1));
+		firstTokeSubject = firstTokeSub.generateMultiple(2);
+		gen = eventSubject.generateMultiple(firstTokeSubject, rand);
+		for (int j = 0; j < gen.size(); j++) {
+			subject = subject + gen.get(j) + " ";
+		}
+		subGenerated.add(subject);
 	}
 
 	void loadNovel(String p) {
@@ -290,6 +426,29 @@ public class LaVidaCotidianaMain extends PApplet {
 			for (int i = 0; i < lines.size(); i++) {
 
 				TextTokenizer tokenizer = new TextTokenizer(lines.get(i));
+				ArrayList<String> t = tokenizer.parseSearchText();
+				tokens.addAll(t);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			println("Oopsie! We had a problem reading a file!");
+		}
+		// loadedText.set(num, tokens); //adds tokens to the slot at num
+		loadedText.add(tokens);
+	}
+
+	void loadNovel2(String p) {
+		String filePath = getPath(p);
+		Path path = Paths.get(filePath);
+		tokens = new ArrayList<String>();
+
+		try {
+			List<String> lines = Files.readAllLines(path);
+
+			for (int i = 0; i < lines.size(); i++) {
+
+				TextTokenizer2 tokenizer = new TextTokenizer2(lines.get(i));
 				ArrayList<String> t = tokenizer.parseSearchText();
 				tokens.addAll(t);
 			}

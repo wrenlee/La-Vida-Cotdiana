@@ -34,7 +34,7 @@ public class TextTokenizer {
 	private String fSearchText;
 	private static final ArrayList<String> fCOMMON_WORDS = new ArrayList<>();
 
-	private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = " \t\r\n\",!?;:()/\\—";
+	private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = " \t\r\n\",!?;()/\\—";
 	//ORIGINAL: private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = " \t\r\n\",.!?;:()/\\—";
 	// private static final String fWHITESPACE_AND_QUOTES_PUNCTUATION = "
 	// \t\r\n\",.!?;:()/\\";

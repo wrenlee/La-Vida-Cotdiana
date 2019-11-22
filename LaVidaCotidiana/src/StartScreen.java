@@ -1,6 +1,8 @@
 import processing.core.PApplet;
 import java.util.*;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
+
 public class StartScreen extends Screen {
 
 	//Button startButton;
@@ -11,8 +13,8 @@ public class StartScreen extends Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1300;
-		height = 800;
+		width = 1800;
+		height = 1000;
 		screenName = name;
 		color = col;
 		//startButton = new Button(parent, width / 2 - 50, height / 2 - 25);
@@ -27,10 +29,11 @@ public class StartScreen extends Screen {
 //		return name;
 //	}
 
-	public void display() {
+	public void display(String name) {
 		parent.noStroke();
 		parent.fill(color);
 		parent.rect(x, y, width, height);
+		
 //		startButton.display("Click to start");
 //		
 //		startButton.isOver();

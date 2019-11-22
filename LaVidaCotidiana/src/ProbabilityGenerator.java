@@ -39,6 +39,10 @@ public class ProbabilityGenerator<T> {
 			probabilityArr.add((float) (alphaCounts.get(i)/totalCounts)); //add the probabilities from each of the counts
 		}//gets probabilities
 	}//probability function
+	
+	public ArrayList getProbabilities() {
+		return probabilityArr;
+	}
 
 	public T generate(ArrayList<Float> prob){ //generate one note based on probability array
 		assert(probabilityArr.size()>1); //this object hasn't been trained

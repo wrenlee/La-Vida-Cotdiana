@@ -1,23 +1,23 @@
-Transit of Mercury. 
-Visualizing Text Locations Using GIS and Python. 
-“Am I a Soldier?”: Photography and Identity in World War I African American Poetry. 
-“Good Jews: Philosemitism in Post-Holocaust Europe.” 
+Transit of Mercury
+Visualizing Text Locations Using GIS and Python
+“Am I a Soldier?”: Photography and Identity in World War I African American Poetry
+Good Jews: Philosemitism in Post-Holocaust Europe
 Integral Equation Modeling for Anomalous Diffusion and Nonlocal Mechanics.
-Statistical Science Department Seminar: Antigen-Independent De Novo Prediction of Cancer-Associated T Cells for Non-Invasive Cancer Detection. 
-Department of Economics: Welfare Consequences of Nominal Excise Taxation.
-Psychology Department Colloquium: These are the Days of Our Lives: Understanding Employee Episodic Experiences at the Work-Life Interface. 
-Topological Invariants for Interface Modes. 
-Department of Economics: International Trade and the Currency Composition of Corporate Debt. 
-Psychology Department Colloquium: An MTurk Crisis? Shifts in Data Quality and the Impact on Study Results. 
-Tomlinson Hill: The Remarkable Story of Two Families Who Share the Tomlinson Name—One White, One Black. 
-Department of Economics, Nonlinear Approaches to Intergenerational Income Mobility Allowing for Measurement Error. 
-Psychology Department Colloquium: Diverse Brains. 
-The Extended Dickens Family. 
-Department of Economics, The Role of Inequality in Poverty Measurement. 
-Psychology Department Colloquium: Children’s Self-blame Appraisals About Their Mothers’ Depressive Symptoms and Risk for Internalizing Symptoms. 
-Human Rights Prospective Student Day. 
-SMU Dispute Resolution Colloquium Series: “Economics of Child Abuse.” 
-Asian Studies Lecture Series. 
+Statistical Science Department Seminar: Antigen-Independent De Novo Prediction of Cancer-Associated T Cells for Non-Invasive Cancer Detection
+Department of Economics: Welfare Consequences of Nominal Excise Taxation
+Psychology Department Colloquium: These are the Days of Our Lives: Understanding Employee Episodic Experiences at the Work-Life Interface
+Topological Invariants for Interface Modes
+Department of Economics: International Trade and the Currency Composition of Corporate Debt
+Psychology Department Colloquium: An MTurk Crisis? Shifts in Data Quality and the Impact on Study Results
+Tomlinson Hill: The Remarkable Story of Two Families Who Share the Tomlinson Name—One White, One Black
+Department of Economics, Nonlinear Approaches to Intergenerational Income Mobility Allowing for Measurement Error
+Psychology Department Colloquium: Diverse Brains
+The Extended Dickens Family
+Department of Economics, The Role of Inequality in Poverty Measurement
+Psychology Department Colloquium: Children’s Self-blame Appraisals About Their Mothers’ Depressive Symptoms and Risk for Internalizing Symptoms
+Human Rights Prospective Student Day
+SMU Dispute Resolution Colloquium Series: “Economics of Child Abuse"
+Asian Studies Lecture Series
 Bow and Bowties
 Rainbow Vomit Returns
 Pho Night
