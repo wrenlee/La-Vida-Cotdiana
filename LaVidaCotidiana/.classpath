@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="/Users/wrenlee/Downloads/coding/jMusic1.6.5.jar"/>
 	<classpathentry kind="lib" path="/Users/wrenlee/Downloads/coding/themidibus/library/themidibus.jar"/>
 	<classpathentry kind="lib" path="/Users/wrenlee/Downloads/coding/interfascia/library/interfascia.jar"/>
+	<classpathentry kind="lib" path="/Users/wrenlee/Documents/Processing/libraries/sound/library/sound.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

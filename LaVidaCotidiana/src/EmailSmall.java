@@ -28,7 +28,7 @@ public class EmailSmall {
 		x = xPos;
 		y = yPos;
 		color = parent.color(226, 240, 203);
-		width = subject.length() * 100;
+		width = 1200;
 		
 		//System.out.println(subject);
 		
@@ -39,11 +39,16 @@ public class EmailSmall {
 	}
 	
 	public boolean isOver() {
+		//isClicked = false;
 		int xBound1 = x - (width / 2);
-		int xBound2 = x + (width / 2);
+		//int xBound2 = x + (width / 2);
+		int xBound2 = x + width;
 		if ((parent.mouseX > xBound1 && parent.mouseX < xBound2) && (parent.mouseY > y && parent.mouseY < y + height) && parent.mousePressed == true) {
-			System.out.println("is over email small");
+			//System.out.println("is over email small");
 			isClicked = true;
+		}
+		else {
+			isClicked = false;
 		}
 		return isClicked;
 	}

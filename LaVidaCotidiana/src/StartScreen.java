@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 import java.util.*;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
@@ -6,8 +7,10 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 public class StartScreen extends Screen {
 
 	//Button startButton;
-	String name;
-	Scanner scanner; 
+	//String name;
+	//Scanner scanner;
+	
+	PImage computerCat;
 
 	StartScreen(PApplet p, Character name, int col) {
 		parent = p;
@@ -17,8 +20,10 @@ public class StartScreen extends Screen {
 		height = 1000;
 		screenName = name;
 		color = col;
-		//startButton = new Button(parent, width / 2 - 50, height / 2 - 25);
-		scanner = new Scanner(System.in);
+		computerCat = parent.loadImage("data/computer cat.gif");
+		// startButton = new Button(parent, width / 2 - 50, height / 2 - 25);
+		//scanner = new Scanner(System.in);
+//		startButton = new Button(parent, parent.width / 2, parent.height / 2);
 	}
 
 //	public void addName() {
@@ -30,16 +35,15 @@ public class StartScreen extends Screen {
 //	}
 
 	public void display(String name) {
-		parent.noStroke();
-		parent.fill(color);
-		parent.rect(x, y, width, height);
-		
-//		startButton.display("Click to start");
-//		
-//		startButton.isOver();
-//		if(startButton.isOver()) {
-//			screenName = 'd';
-//			System.out.println(screenName);
-//		}
+		computerCat.resize(500, 800);
+		parent.image(computerCat, 0, 0);
 	}
+//
+//	public int isClicked() {
+//		int state = 0;
+//		if (startButton.isOver()) {
+//			state = 1;
+//		}
+//		return state;
+//	}
 }

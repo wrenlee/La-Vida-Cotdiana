@@ -11,11 +11,18 @@ public class Screen {
 	int height;
 	Character screenName;
 	int color;
+	Button button;
 
 	ArrayList<EmailSmall> subjectArr = new ArrayList<EmailSmall>(); // holds individual emails
 	ArrayList<Email> allEmails = new ArrayList<Email>();
 	EmailSmall tempSub;
 	Email tempEmail;
+
+	PImage cat;
+	int catX;
+	int catY;
+	int catSpeed;
+	int catSpeedY;
 
 	Screen() {
 		x = 0;
@@ -38,6 +45,7 @@ public class Screen {
 		screenName = name;
 		// color = parent.color(100, 82, 86);
 		color = col;
+		button = new Button();
 	}
 
 	public void init(ArrayList<String> subArr, ArrayList<String> bodyArr, int subNum, int bodyNum) {
@@ -66,13 +74,13 @@ public class Screen {
 	}
 
 	public void displayEmail(String subject, int num) {
-		//System.out.println(num);
-		//System.out.println("Subject arr "+ subjectArr.size());
+		// System.out.println(num);
+		// System.out.println("Subject arr "+ subjectArr.size());
 		for (int i = 0; i < num; i++) {// display emails
 			subjectArr.get(i).display(subject, 10, (i * 100) + 10);
 		}
 	}
-	
+
 	public void displayEmail(String subject) {
 		for (int i = 0; i < subjectArr.size(); i++) {// display emails
 			System.out.println(i);
@@ -87,5 +95,34 @@ public class Screen {
 				allEmails.get(i).display();
 			}
 		}
+	}
+
+	public int isClicked() {
+		int state = 0;
+		if (button.isOver()) {
+			System.out.println("DAYUM The button works!");
+			state = 1;
+		}
+		return state;
+	}
+
+	public void catMove() {
+		System.out.println("Cat move!");
+		catX = catX + catSpeed;
+		catY = catY + catSpeed;
+		if (catX > parent.width || catX < 0) {
+			catSpeed *= -1;
+		}
+		if (catY > parent.displayHeight || catY < 0) {
+			catSpeedY *= -1;
+		}
+	}
+	
+	public boolean buttonOver() {
+		boolean over = false;
+		if(button.isOver()) {
+			over = true;
+		}
+		return over;
 	}
 }

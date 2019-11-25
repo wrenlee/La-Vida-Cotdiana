@@ -1,6 +1,7 @@
 import processing.core.*;
 
 public class MusicScreen extends Screen{
+	PImage cat;
 
 	MusicScreen(PApplet p, Character name, int col) {
 		parent = p;
@@ -11,11 +12,11 @@ public class MusicScreen extends Screen{
 		screenName = name;
 		// color = parent.color(100, 82, 86);
 		color = col;
+		cat = parent.loadImage("data/cat music.jpg");
 	}
 
 	public void display() {
-		// background
-		parent.fill(color);
-		parent.rect(x, y, width, height);
+		cat.resize(1440, 900);
+		parent.image(cat, 0,0);
 	}
 }

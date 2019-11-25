@@ -8,29 +8,34 @@ public class Email {
 	int color;
 	String message;
 	PApplet parent;
-	
-	public Email(PApplet p, int xPos, int yPos){
-		parent = p;	
+
+	public Email(PApplet p, int xPos, int yPos) {
+		parent = p;
 		x = xPos;
 		y = yPos;
 	}
-	
-	public Email(PApplet p, int xPos, int yPos, String mes){
-		parent = p;	
+
+	public Email(PApplet p, int xPos, int yPos, String mes) {
+		parent = p;
 		x = xPos;
 		y = yPos;
 		message = mes;
+		width = 1200;
 	}
-	
+
 	public void display() {
-		width = message.length() * 100;
-		parent.rect(x - (width / 2), y - (height / 2), width, height);
+		// System.out.println(message);
+		//parent.rect(x, y, width, height);
 		parent.fill(0);
 		parent.text(message, x + 10, y + 20);
 	}
-	
+
 	public void setMessage(String mes) {
 		message = mes;
+	}
+
+	public void displayMessage() {
+		System.out.println(message);
 	}
 
 }
