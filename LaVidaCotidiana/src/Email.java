@@ -24,8 +24,6 @@ public class Email {
 	}
 
 	public void display() {
-		// System.out.println(message);
-		//parent.rect(x, y, width, height);
 		parent.fill(0);
 		parent.text(message, x + 10, y + 20);
 	}

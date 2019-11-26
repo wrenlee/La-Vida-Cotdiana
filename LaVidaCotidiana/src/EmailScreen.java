@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import processing.core.*;
+import processing.core.PImage;
 
 public class EmailScreen extends Screen {
 
@@ -39,6 +40,10 @@ public class EmailScreen extends Screen {
 		parent.image(email, 0, 0);
 		parent.fill(200);
 		parent.rect(265, 140, parent.width - 100, 800);
+		parent.fill(parent.color(255, 207, 240));// pink
+		parent.rect(x, y, width, 35); // top box
+		parent.fill(0);
+		parent.text("Click and hold to read the emails and view a surprise!", 10, 20);
 	}
 
 	public void displayEmail(String subject, int num) {

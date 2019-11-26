@@ -24,15 +24,6 @@ public class AboutScreen extends Screen {
 		//button.display("Back");
 	}
 	
-//	public int isClicked() {
-//		int state = 0;
-//		if(button.isOver()) {
-//			System.out.println("DAYUM The button works!");
-//			state = 1;
-//		}
-//		return state;
-//	}
-	
 	public boolean buttonOver() {
 		boolean over = false;
 		if(button.isOver()) {

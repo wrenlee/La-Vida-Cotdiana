@@ -22,17 +22,7 @@ public class EmailButton extends Button{
 		parent.rect(x - (width / 2), y, mesLen + 100, mesLen + 100);
 		parent.fill(0);
 		parent.line(x - (width / 2) - ((mesLen + 300) / 2), y - ((mesLen + 300) / 2), x - (width / 2), y + (mesLen + 300));
-		parent.text(mes, x - (width / 2) + 35, (y + height / 2) + 30);
+		parent.text(mes, x - (width / 2) + 10, (y + height / 2) + 30);
 	}
-
-//	public boolean isOver() {
-//		int xBound1 = x - (width / 2);
-//		int xBound2 = x + (width / 2);
-//		if ((parent.mouseX > xBound1 && parent.mouseX < xBound2) && (parent.mouseY > y && parent.mouseY < y + height) && parent.mousePressed == true) {
-//			//System.out.println("Email CLICKED!");
-//			isClicked = true;
-//		}
-//		return isClicked;
-//	}
 
 }

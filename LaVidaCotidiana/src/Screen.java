@@ -43,7 +43,6 @@ public class Screen {
 		width = 1800;
 		height = 1000;
 		screenName = name;
-		// color = parent.color(100, 82, 86);
 		color = col;
 		button = new Button();
 	}
@@ -74,8 +73,6 @@ public class Screen {
 	}
 
 	public void displayEmail(String subject, int num) {
-		// System.out.println(num);
-		// System.out.println("Subject arr "+ subjectArr.size());
 		for (int i = 0; i < num; i++) {// display emails
 			subjectArr.get(i).display(subject, 10, (i * 100) + 10);
 		}
@@ -104,18 +101,6 @@ public class Screen {
 			state = 1;
 		}
 		return state;
-	}
-
-	public void catMove() {
-		System.out.println("Cat move!");
-		catX = catX + catSpeed;
-		catY = catY + catSpeed;
-		if (catX > parent.width || catX < 0) {
-			catSpeed *= -1;
-		}
-		if (catY > parent.displayHeight || catY < 0) {
-			catSpeedY *= -1;
-		}
 	}
 	
 	public boolean buttonOver() {

@@ -11,7 +11,6 @@ public class EmailReadScreen extends Screen{
 		width = 1300;
 		height = 800;
 		screenName = name;
-		// color = parent.color(100, 82, 86);
 		color = col;
 	}
 
