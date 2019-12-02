@@ -7,16 +7,15 @@ public class MusicScreen extends Screen{
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
-		// color = parent.color(100, 82, 86);
 		color = col;
 		cat = parent.loadImage("data/cat music.jpg");
 	}
 
 	public void display() {
-		cat.resize(1440, 900);
+		cat.resize(parent.width, parent.height);
 		parent.image(cat, 0,0);
 	}
 }

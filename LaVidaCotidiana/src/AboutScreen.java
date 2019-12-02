@@ -10,18 +10,16 @@ public class AboutScreen extends Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
-		// color = parent.color(100, 82, 86);
 		color = col;
 		about = parent.loadImage("data/about.png");
 		button = new Button(parent, width - 500, 740);
 	}
 	public void display() {
-		about.resize(1440, 900);
+		about.resize(parent.width, parent.height);
 		parent.image(about, 0, 0);
-		//button.display("Back");
 	}
 	
 	public boolean buttonOver() {

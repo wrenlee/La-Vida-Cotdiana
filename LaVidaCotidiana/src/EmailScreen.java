@@ -15,8 +15,8 @@ public class EmailScreen extends Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
 		color = col;
 		email = parent.loadImage("data/email.png");
@@ -36,7 +36,7 @@ public class EmailScreen extends Screen {
 	}
 
 	public void display() {
-		email.resize(1500, 900);
+		email.resize(width, height);
 		parent.image(email, 0, 0);
 		parent.fill(200);
 		parent.rect(265, 140, parent.width - 100, 800);

@@ -14,8 +14,8 @@ public class DesktopScreen extends Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
 		color = col;
 		bubbleArr = new Bubble[10];
@@ -33,7 +33,7 @@ public class DesktopScreen extends Screen {
 
 	public void display() {
 		parent.noStroke();
-		background.resize(1500, 900);
+		background.resize(parent.width, parent.height);
 		parent.image(background, 0, 0);
 		parent.fill(parent.color(255, 207, 240));// pink
 		parent.rect(x, y, width, 35); // top box

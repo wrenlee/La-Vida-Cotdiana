@@ -30,6 +30,9 @@ import ddf.minim.*;
 import ddf.minim.effects.*;
 
 public class LaVidaCotidianaMain extends PApplet {
+	float screenWidth;
+	float screenHeight;
+	
 	// color variables
 	int pastelPink = color(255, 207, 240);
 	int pastelGreen = color(207, 255, 213);
@@ -93,7 +96,6 @@ public class LaVidaCotidianaMain extends PApplet {
 	Button nameButton;
 	EmailButton coldplay;
 	EmailButton countryRoads;
-	// EmailButton queen;
 	EmailButton anime;
 	Button backButton;
 	EmailButton aboutButton;
@@ -103,17 +105,13 @@ public class LaVidaCotidianaMain extends PApplet {
 
 	SoundFile sf1;
 	SoundFile sf2;
-	// SoundFile sf3;
 	SoundFile sf4;
 	boolean coldPlay = false;
 	boolean roadPlay = false;
 	boolean animePlay = false;
-
-	GUIController controller;
-	IFTextField type;
-	IFLabel l;
-//	IFTextField typeName = new IFTextField("Name", width / 2 - 50, height / 2 - 100, 50);
-	// String name = "";
+	
+	boolean markovLoaded = false; 
+	boolean soundLoaded = false; 
 
 	public static void main(String[] args) {
 		PApplet.main("LaVidaCotidianaMain");
@@ -121,16 +119,14 @@ public class LaVidaCotidianaMain extends PApplet {
 	}
 
 	public void settings() {
-		// size(1300, 800);
 		fullScreen();
 	}
 
 	public void setup() {
+		screenWidth = width;
+		screenHeight = height;
+		
 		cat = loadImage("data/computer cat.gif");
-
-//		controller = new GUIController(this);
-//		type = new IFTextField("Reply", 300, 330, 1000);
-//		l = new IFLabel("Reply", 300, 330);
 
 		font = createFont("data/StrawberryMilkshake.ttf", 17);
 		textFont(font);
@@ -144,7 +140,9 @@ public class LaVidaCotidianaMain extends PApplet {
 		screenArr[3] = new MusicScreen(this, 'm', pastelGreen); // music
 		screenArr[4] = new EmailReadScreen(this, 'r', white);
 		screenArr[5] = new AboutScreen(this, 'a', pastelPink);
-
+		
+		System.out.println("loading...");
+		
 		// buttons
 		startButton = new Button(this, width / 2, height / 2);
 		emailButton = new EmailButton(this, 100, 200, pastelRed);
@@ -153,7 +151,7 @@ public class LaVidaCotidianaMain extends PApplet {
 		nameButton = new Button(this, 0, 0);
 		backButton = new Button(this, 65, 780);
 		backButton2 = new Button(this, 65, 780);
-		backButton3 = new Button(this, 1800 - 500, 740);
+		backButton3 = new Button(this, 65, 780);
 
 		coldplay = new EmailButton(this, 200, 100, pastelBlue);
 		countryRoads = new EmailButton(this, 400, 100, pastelOrange);
@@ -161,7 +159,9 @@ public class LaVidaCotidianaMain extends PApplet {
 		stopButton = new Button(this, 800, 100);
 
 		order = 3;
-
+		
+		System.out.println("loading...");
+		
 		// generators
 		loadedText = new ArrayList<ArrayList<String>>();
 		probGenDedman = new ProbabilityGenerator();
@@ -175,57 +175,53 @@ public class LaVidaCotidianaMain extends PApplet {
 		genEmail = new ArrayList<ArrayList<String>>();
 		emailText = new ArrayList<String>();
 		subGenerated = new ArrayList<String>();
+		
+		System.out.println("loading...");
 
-		// songs
-//		int orderPitch = 2;
-//		filePath = new ArrayList<String>(4);
-//		filePath.add(getPath("mid/Coldplay - Viva La Vida.mid"));// coldplay
-//		filePath.add(getPath("mid/John Denver - Take Me Home Country Roads.mid"));// country roads
-//		filePath.add(getPath("mid/Queen - Bohemian Rhapsody.mid"));// queen
-//		filePath.add(getPath("mid/Tokyo Ghoul - Unravel.mid"));// tokyo ghoul
-//		midiNotes = new ArrayList<MidiFileToNotes>(4);
-//		for (int i = 0; i < 4; i++) {
-//			MidiFileToNotes path = new MidiFileToNotes(filePath.get(i));
-//			midiNotes.add(path);
-//			midiNotes.get(i).setWhichLine(0);
-//		}
-//		player = new MelodyPlayer(this, 100.0f);
-//
-//		pitch = new ArrayList<MarkovGeneratorN>(4);
-//		rhythm = new ArrayList<MarkovGeneratorN>(4);
-//		for (int i = 0; i < 4; i++) {// train generators
-//			pitch.get(i).train(midiNotes.get(i).getPitchArray(), orderPitch);
-//			rhythm.get(i).train(midiNotes.get(i).getRhythmArray(), orderPitch);
-//		}
-//		player.setup();
-
-		sf1 = new SoundFile(this, "data/coldplay.mp3");
-		sf2 = new SoundFile(this, "data/road.mp3");
-		sf4 = new SoundFile(this, "data/anime.mp3");
-
+		PApplet parent = this; 
+		
+		(new Thread(new Runnable(){
+			   public void run(){
+					sf1 = new SoundFile(parent, "data/coldplay.mp3");
+					sf2 = new SoundFile(parent, "data/road.mp3");
+					sf4 = new SoundFile(parent, "data/anime.mp3");
+					soundLoaded = true; 
+					}
+			})).start();
+		
+		(new Thread(new Runnable(){
+			   public void run(){
+		
 		tokenizer();
 		train();
 		firstString();
 		generate();
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 20; i++) {
 			generateEventSubject();
 		}
 		EmailSmall tempSub;
 		Email tempEmail;
 		for (int i = 0; i < subGenerated.size(); i++) {// initialize emails
-			tempSub = new EmailSmall(this);
+			tempSub = new EmailSmall(parent);
 			subjectArr.add(tempSub);
 		}
 		for (int i = 0; i < emailText.size(); i++) {
-			tempEmail = new Email(this, 265, 210);
+			tempEmail = new Email(parent, screenWidth * (265/1440.0f), screenHeight * (210/800.0f));
 			allEmails.add(tempEmail);
 		}
+		 markovLoaded = true; 
+		
+			}
+		})).start();
 	}
 
 	public void draw() {
 		noStroke();
 		screenArr[0].display();
-		startButton.display("Click to start");
+		if( !markovLoaded || !soundLoaded)
+			startButton.display("Loading!");
+		else
+			startButton.display("Click to start");
 
 		if (screenState == 1) {
 			desktop();
@@ -238,13 +234,11 @@ public class LaVidaCotidianaMain extends PApplet {
 		}
 	}
 
-	void actionPerformed(GUIEvent e) {
-		if (e.getMessage().equals("Completed")) {
-			l.setLabel(type.getValue());
-		}
-	}
-
 	public void mouseClicked() {
+		if( !markovLoaded || !soundLoaded)
+			return; 
+
+		
 		if (startButton.isOver()) {
 			screenState = 1;
 		} else if (emailButton.isOver()) {
@@ -293,11 +287,11 @@ public class LaVidaCotidianaMain extends PApplet {
 		aboutButton.display("About");
 	}
 
-	public void email() {
+	public void email() {	
 		screenArr[2].display();
 		// loop to display subjects
 		for (int i = 0; i < subGenerated.size(); i++) {
-			subjectArr.get(i).display(subGenerated.get(i), 265, (i * 60) + 140);
+			subjectArr.get(i).display(subGenerated.get(i), screenWidth * (265/1440.0f), (i * 60) + (screenHeight * (140/900.0f)));
 		}
 		// display emails
 		for (int i = 0; i < emailText.size(); i++) {
@@ -307,14 +301,14 @@ public class LaVidaCotidianaMain extends PApplet {
 		for (int i = 0; i < emailText.size(); i++) {
 			if (subjectArr.get(i).isOver()) {
 				fill(pastelPurple);
-				rect(265, 140, 1200, 800);
+				rect(screenWidth * (265/1440.0f), screenHeight * (140/900.0f), 1200, 800);
 				fill(0);
-				text("To: tu@correoelectronico.com", 270, 170);
-				text("From: tuvidacotidiana@correoelectronico.com ", 270, 190);
+				text("To: tu@correoelectronico.com", screenWidth * (265/1440.0f), (screenHeight * (160/900.0f)));
+				text("From: tuvidacotidiana@correoelectronico.com ", screenWidth * (265/1440.0f), screenHeight * (190/ 900.0f));
 				fill(pastelBlue);
-				rect(265, 300, 1200, 500);
+				rect(screenWidth * (265/1440.0f), screenHeight * (300/900.0f), 1200, 500);
 				allEmails.get(i).display();
-				image(cat, 300, 310);
+				image(cat, screenWidth * (300/1440.0f), screenHeight * (310/900.0f));
 
 			}
 		}
@@ -393,7 +387,7 @@ public class LaVidaCotidianaMain extends PApplet {
 		// generate moar
 		ArrayList<ArrayList<String>> genArr = new ArrayList<ArrayList<String>>();
 		int numGen = (int) random(10, 25);
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 20; i++) {
 			genArr.add(eventText.generateMultiple(initString, numGen));
 		}
 		System.out.println(genArr.size());

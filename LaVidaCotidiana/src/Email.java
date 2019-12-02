@@ -1,21 +1,21 @@
 import processing.core.*;
 
 public class Email {
-	int x;
-	int y;
+	float x;
+	float y;
 	int width;
 	int height;
 	int color;
 	String message;
 	PApplet parent;
 
-	public Email(PApplet p, int xPos, int yPos) {
+	public Email(PApplet p, float xPos, float yPos) {
 		parent = p;
 		x = xPos;
 		y = yPos;
 	}
 
-	public Email(PApplet p, int xPos, int yPos, String mes) {
+	public Email(PApplet p, float xPos, float yPos, String mes) {
 		parent = p;
 		x = xPos;
 		y = yPos;

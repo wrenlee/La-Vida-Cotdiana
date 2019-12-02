@@ -12,8 +12,8 @@ public class StartScreen extends Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.width;
 		screenName = name;
 		color = col;
 		computerCat = parent.loadImage("data/computer cat.gif");

@@ -27,8 +27,8 @@ public class Screen {
 	Screen() {
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+//		width = parent.width;
+//		height = parent.height;
 		screenName = 'z';
 	}
 
@@ -40,8 +40,8 @@ public class Screen {
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1800;
-		height = 1000;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
 		color = col;
 		button = new Button();
@@ -97,7 +97,6 @@ public class Screen {
 	public int isClicked() {
 		int state = 0;
 		if (button.isOver()) {
-			System.out.println("DAYUM The button works!");
 			state = 1;
 		}
 		return state;

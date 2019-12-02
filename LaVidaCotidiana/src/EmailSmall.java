@@ -2,33 +2,33 @@ import processing.core.*;
 import java.util.ArrayList;
 
 public class EmailSmall {
-	int x;
-	int y;
+	float x;
+	float y;
 	int width;
 	int height;
 	int color;
 	PApplet parent;
 	boolean isClicked;
 
-	public EmailSmall(PApplet p, int xPos, int yPos) {
+	public EmailSmall(PApplet p, float xPos, float yPos) {
 		parent = p;
 		x = xPos;
 		y = yPos;
-		width = 1000;
+		width = parent.width;
 		height = 50;
 	}
 	
 	public EmailSmall(PApplet p) {
 		parent = p;
-		width = 1500;
+		width = parent.width;
 		height = 50;
 	}
 	
-	public void display(String subject, int xPos, int yPos) {
+	public void display(String subject, float xPos, float yPos) {
 		x = xPos;
 		y = yPos;
 		color = parent.color(226, 240, 203);
-		width = 1200;
+		width = parent.width;
 		
 		parent.fill(color); // yellow!
 		parent.rect(x, y, width, height); //rect box
@@ -37,9 +37,8 @@ public class EmailSmall {
 	}
 	
 	public boolean isOver() {
-		int xBound1 = x - (width / 2);
-		//int xBound2 = x + (width / 2);
-		int xBound2 = x + width;
+		float xBound1 = x - (width / 2);
+		float xBound2 = x + width;
 		if ((parent.mouseX > xBound1 && parent.mouseX < xBound2) && (parent.mouseY > y && parent.mouseY < y + height) && parent.mousePressed == true) {
 			isClicked = true;
 		}

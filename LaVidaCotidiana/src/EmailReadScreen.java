@@ -8,8 +8,8 @@ public class EmailReadScreen extends Screen{
 		parent = p;
 		x = 0;
 		y = 0;
-		width = 1300;
-		height = 800;
+		width = parent.width;
+		height = parent.height;
 		screenName = name;
 		color = col;
 	}
